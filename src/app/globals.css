@@ -1,4 +1,28 @@
-@import "tailwindcss";
+/* @import "tailwindcss"; */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'Metropolis-normal';
+  src: url('/fonts/Metropolis-Regular.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Metropolis-SemiBold';
+  src: url('/fonts/Metropolis-SemiBold.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Metropolis-Bold';
+  src: url('/fonts/Metropolis-Bold.woff2') format('woff2');
+  font-weight: bold;
+  font-style: normal;
+}
 
 :root {
   --background: #ffffff;
@@ -22,5 +46,13 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Metropolis-normal', Arial, Helvetica, sans-serif;
+}
+
+/* Rest of your global styles */
+.bg-notification-ticker {
+  background-image: url('/icons/notification-ticker-bg.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
