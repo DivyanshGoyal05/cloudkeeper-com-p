@@ -1,4 +1,3 @@
-import React from 'react';
 
 const Testimonial = () => (
   <section className="bg-white py-12 px-4">
