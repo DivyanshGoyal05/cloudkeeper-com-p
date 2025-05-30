@@ -1,23 +1,46 @@
-import React from 'react';
-
 const partners = [
-  { logo: '/partners/google.png', title: 'Google Cloud Partner', desc: 'Certified and experienced Google Cloud partner for cost optimization.' },
-  { logo: '/partners/aws.png', title: 'AWS Advanced Consulting Partner', desc: 'Recognized AWS partner for cloud cost savings and FinOps.' },
-  { logo: '/partners/microsoft.png', title: 'Microsoft Solutions Partner', desc: 'An authorized partner helping businesses save on Azure.' },
+  {
+    logo: "/icons/google1.webp",
+    title: "Google Cloud Partner",
+    desc: "Certified expertise & competencies to help businesses maximize the potential of Google Cloud infrastructure.",
+  },
+  {
+    logo: "/icons/aws-badge.svg",
+    title: "AWS Advanced Consulting Partner",
+    desc: "Highest tier partner with 100+ certifications & expertise in designing, migrating, & managing workloads on the AWS cloud.",
+  },
+  {
+    logo: "/icons/microsoft11.webp",
+    title: "Microsoft Solutions Partner",
+    desc: "An authorized partner helping businesses save on Azure.",
+  },
 ];
 
 const PartnerCards = () => (
   <section className="bg-gray-50 py-12 px-4">
-    <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+    <div className=" text-center mb-8 text-xl font-black text-black">
+      Your <span className="text-[#4398d7]">One Stop Destination</span> for All
+      Cloud Needs
+    </div>
+
+    <div className="flex justify-between  gap-6">
       {partners.map((p, idx) => (
-        <div key={idx} className="bg-white rounded-lg shadow p-6 flex flex-col items-center text-center">
-          <img src={p.logo} alt={p.title} className="h-12 mb-4" />
-          <h4 className="font-bold text-lg text-blue-700 mb-2">{p.title}</h4>
-          <p className="text-gray-500 text-sm">{p.desc}</p>
+        <div
+          key={idx}
+          className="bg-blue-900 rounded-lg shadow p-6 flex flex-col items-center text-center w-full md:w-1/3"
+        >
+          <div className="flex items-center justify-center h-20 w-full bg-blue-900 rounded-md mb-4">
+            <img
+              src={p.logo}
+              alt={p.title}
+              className="h-12 max-w-[120px] object-contain hover:grayscale-0 transition"
+            />
+          </div>
+          <p className="text-gray-300 text-sm">{p.desc}</p>
         </div>
       ))}
     </div>
   </section>
 );
 
-export default PartnerCards; 
+export default PartnerCards;
