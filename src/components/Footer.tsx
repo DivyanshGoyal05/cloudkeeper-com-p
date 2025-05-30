@@ -156,27 +156,37 @@ const Footer = () => {
         className="p-4 bg-cover bg-center rounded"
         style={{ backgroundImage: "url('/icons/top-banner-exit-popup.png')" }}
       >
-        <p className="text-sm mb-4 text-black">
-          Be the first to know the latest FinOps insights and news!
-        </p>
+        <div className="flex justify-around">
+          <div>
+            <p className="text-sm mb-4 text-black">
+              Be the first to know the latest FinOps insights and news!
+            </p>
+          </div>
 
-        <form className="flex gap-2 mb-4">
-          <input
-            type="email"
-            placeholder="Your email"
-            className="px-3 py-2 border rounded w-full"
-          />
-          <button
-            type="submit"
-            className="px-4 py-2 bg-blue-700 text-white rounded font-semibold"
-          >
-            Subscribe
-          </button>
-        </form>
+          <div>
+            <form className="flex gap-2 mb-4">
+              <input
+                type="email"
+                placeholder="Email ID"
+                className="px-3 py-2 border rounded w-full bg-white text-gray-800"
+              />
+              <button
+                type="submit"
+                className="px-4 py-2 bg-blue-700 text-white rounded font-semibold"
+              >
+                Subscribe Now
+              </button>
+            </form>
+          </div>
+        </div>
       </div>
       {/* Social and Badges */}
+
       <div>
-        <h4 className="font-bold text-black mb-2">Follow Us</h4>
+        <div>
+          <h4 className="font-bold text-black mb-2">Follow Us</h4>
+        </div>
+
         <div className="flex gap-3 mb-4">
           {/* <img src="" alt="" />
           <img src="" alt="" />
