@@ -156,41 +156,84 @@ const Footer = () => {
         className="p-4 bg-cover bg-center rounded"
         style={{ backgroundImage: "url('/icons/top-banner-exit-popup.png')" }}
       >
-        <p className="text-sm mb-4 text-black">
-          Be the first to know the latest FinOps insights and news!
-        </p>
+        <div className="flex justify-around">
+          <div>
+            <p className="mb-4 text-4xl text-black font-bold">
+              Be the first to know the latest FinOps insights and news!
+            </p>
+          </div>
 
-        <form className="flex gap-2 mb-4">
-          <input
-            type="email"
-            placeholder="Your email"
-            className="px-3 py-2 border rounded w-full"
-          />
-          <button
-            type="submit"
-            className="px-4 py-2 bg-blue-700 text-white rounded font-semibold"
-          >
-            Subscribe
-          </button>
-        </form>
+          <div>
+            <form className="flex gap-2 mb-4">
+              <input
+                type="email"
+                placeholder="Email ID"
+                className="px-3 py-2 border rounded w-full bg-white text-gray-800"
+              />
+              <button
+                type="submit"
+                className="px-4 py-2 bg-[#4398d7] text-white rounded font-semibold"
+              >
+                Subscribe Now
+              </button>
+            </form>
+          </div>
+        </div>
       </div>
       {/* Social and Badges */}
-      <div>
-        <h4 className="font-bold text-black mb-2">Follow Us</h4>
-        <div className="flex gap-3 mb-4">
-          {/* <img src="" alt="" />
-          <img src="" alt="" />
-          <img src="" alt="" />
-          <img src="" alt="" /> */}
-        </div>
-        <div className="flex gap-2">
-          {/* <img src="/badges/partner.png" alt="Partner Badge" className="h-6" />
-          <img src="/badges/award.png" alt="Award Badge" className="h-6" /> */}
-        </div>
-      </div>
 
-      <div className="text-center text-xs text-black mt-6">
-        &copy; {new Date().getFullYear()} CloudKeeper. All rights reserved.
+      <div className="flex justify-between items-center px-8 py-6">
+        <div className="flex flex-col items-center gap-4">
+          <div>
+            <h4 className="font-bold text-black text-center">Follow Us</h4>
+          </div>
+
+          <div className="flex gap-6 justify-center">
+            <a href="#" className="hover:opacity-80">
+              <img src="/icons/in.svg" alt="LinkedIn" width={24} height={24} />
+            </a>
+            <a href="#" className="hover:opacity-80">
+              <img
+                src="/icons/twitter_0.svg"
+                alt="Twitter"
+                width={24}
+                height={24}
+              />
+            </a>
+            <a href="#" className="hover:opacity-80">
+              <img
+                src="/icons/youtube_0.svg"
+                alt="YouTube"
+                width={24}
+                height={24}
+              />
+            </a>
+            <a href="#" className="hover:opacity-80">
+              <img
+                src="/icons/medium-logo-93CDCF6451-seeklogo.com 1.svg"
+                alt="Medium"
+                width={24}
+                height={24}
+              />
+            </a>
+          </div>
+        </div>
+
+        <div className="flex gap-6 items-center">
+          <div className="text-black"> Privacy Policy</div>
+          <div className="text-black"> Responsible Disclosure </div>
+        </div>
+        <div className="flex flex-col gap-2 text-black">
+          <div>
+            <img
+              src="/icons/Cloudkeeper_New.svg"
+              alt="CloudKeeper Logo"
+              width={150}
+              height={40}
+            />
+          </div>
+          <div>Copyright ©2025</div>
+        </div>
       </div>
     </footer>
   );
