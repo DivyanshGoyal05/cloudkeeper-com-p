@@ -1,30 +1,26 @@
-
 const partners = [
   {
-    logo: '/icons/google1.webp',
-    title: 'Google Cloud Partner',
-    desc: 'Certified expertise & competencies to help businesses maximize the potential of Google Cloud infrastructure.',
+    logo: "/icons/google1.webp",
+    title: "Google Cloud Partner",
+    desc: "Certified expertise & competencies to help businesses maximize the potential of Google Cloud infrastructure.",
   },
   {
-    logo: '/icons/aws-badge.svg',
-    title: 'AWS Advanced Consulting Partner',
-    desc: 'Highest tier partner with 100+ certifications & expertise in designing, migrating, & managing workloads on the AWS cloud.',
+    logo: "/icons/aws-badge.svg",
+    title: "AWS Advanced Consulting Partner",
+    desc: "Highest tier partner with 100+ certifications & expertise in designing, migrating, & managing workloads on the AWS cloud.",
   },
   {
-    logo: '/icons/microsoft11.webp',
-    title: 'Microsoft Solutions Partner',
-    desc: 'An authorized partner helping businesses save on Azure.',
+    logo: "/icons/microsoft11.webp",
+    title: "Microsoft Solutions Partner",
+    desc: "An authorized partner helping businesses save on Azure.",
   },
 ];
 
 const PartnerCards = () => (
   <section className="bg-gray-50 py-12 px-4">
     <div className=" text-center mb-8 text-xl font-black text-black">
-      Your{' '}
-      <span className="text-[#4398d7]">
-        One Stop Destination
-      </span>{' '}
-      for All Cloud Needs
+      Your <span className="text-[#4398d7]">One Stop Destination</span> for All
+      Cloud Needs
     </div>
 
     <div className="flex justify-between  gap-6">
