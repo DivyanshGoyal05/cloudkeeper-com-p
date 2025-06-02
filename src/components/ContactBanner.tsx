@@ -85,9 +85,11 @@ const achievements = [
 ];
 
 const ContactBanner = () => (
-  <div className="bg-blue-900 py-10 px-4 text-white w-full max-w-7xl mx-auto rounded-lg shadow">
+<>
     {/* Row for text + button */}
-    <div className="flex flex-wrap justify-between items-center mb-8">
+    <div className="flex flex-wrap justify-center items-center mb-4
+    "
+    style={{ backgroundImage: "url('/icons/top-banner-exit-popup.png')" }}>
       <div className="text-2xl font-bold max-w-xl">
         Speak with our advisors to learn how you can take control of your Cloud Cost
       </div>
@@ -101,7 +103,8 @@ const ContactBanner = () => (
     </div>
 
     {/* Flex row for achievements */}
-    <div className="flex flex-wrap justify-center gap-6">
+    <div className="flex flex-wrap justify-center gap-6"
+    style={{ backgroundImage: "url('/icons/top-banner-exit-popup.png')" }}>
       {achievements.map((item, index) => (
         <div key={index} className="flex flex-col items-center max-w-[150px] text-center">
           {item.icon}
@@ -109,7 +112,7 @@ const ContactBanner = () => (
         </div>
       ))}
     </div>
-  </div>
+  </>
 );
 
 export default ContactBanner;

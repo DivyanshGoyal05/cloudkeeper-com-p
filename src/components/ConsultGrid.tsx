@@ -1,76 +1,97 @@
-
 const consults = [
   {
     title: "Consult",
-    point_one: "FinOps Consulting & Support",
-    point_two: "Well-Architected Reviews for AWS & Azure",
+    services: [
+      "FinOps Consulting & Support",
+      "Well-Architected Reviews for AWS & Azure",
+    ],
   },
   {
     title: "Implement",
-    point_one: "Cloud Migration Planning & Implementation",
-    point_two: "Cloud Modernization Strategies",
+    services: [
+      "Cloud Migration Planning & Implementation",
+      "Cloud Modernization Strategies",
+    ],
   },
   {
     title: "Manage",
-    point_one: "Ongoing cloud management",
-    point_two: "24x7 support for your infrastructure",
+    services: [
+      "24*7 Personalized Cloud Support",
+      "Partner-led Support at a discounted price",
+      "On-Demand Professional Services",
+    ],
   },
   {
     title: "Improve",
-    point_one: "Continuous cost and performance tuning",
-    point_two: "Proactive optimization recommendations",
+    services: [
+      "Cloud Infrastructure & Cost Optimization",
+      "DevOps Services",
+    ],
   },
 ];
 
-const ConsultGrid = () => (
-  <section className="bg-blue-50 py-12 px-4">
-    <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-6">
-      <div className="text-gray-700 text-lg font-semibold mt-8 mb-4">
-        Your cloud cost optimization needs more than “just savings”
-      </div>
+const CloudCostOptimization = () => {
+  const firstList = consults.slice(0, 2); // Consult & Implement
+  const secondList = consults.slice(2);   // Manage & Improve
 
-      {consults.map((c, idx) => (
-        <div
-          key={idx}
-          className="bg-white rounded-lg shadow p-6 flex flex-col items-center text-center"
-        >
-          <h4 className="font-bold text-lg text-blue-700 mb-2">{c.title}</h4>
-          <p className="text-gray-500 text-sm">{c.point_one}</p>
-          <p className="text-gray-500 text-sm">{c.point_two}</p>
+  return (
+    <div className="bg-gray-50 py-16 px-4">
+      {/* Row 1 */}
+      <div className="flex  gap-8 mb-12">
+        {/* Hero */}
+        <div className="w-full lg:w-1/3">
+          <h1 className="text-4xl md:text-5xl font-light text-gray-800 leading-tight">
+            Your cloud cost<br />
+            optimization needs<br />
+            more than <span className="text-blue-500">"just<br />savings"</span>
+          </h1>
         </div>
-      ))}
-    </div>
-    <div>
-      <div className="text-gray-700 text-lg font-semibold mt-8 mb-4">
-        We take care of your cloud's end-to-end needs, ensuring it’s always
-        optimized & future-proof, while you focus solely on growing your
-        business.
+
+        {/* First 2 sections */}
+        {firstList.map((section, index) => (
+          <div key={index} className="w-full lg:w-1/3 bg-white p-6 rounded-lg shadow-md">
+            <h2 className="text-2xl font-semibold text-gray-800 mb-6">{section.title}</h2>
+            <div className="space-y-4">
+              {section.services.map((service, i) => (
+                <div key={i} className="flex items-start">
+                  <div className="w-2 h-2 rounded-full border-2 border-red-400 mt-2 mr-3 flex-shrink-0"></div>
+                  <p className="text-blue-600 text-sm">{service}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        ))}
       </div>
-      <div>
-        <button></button>
+
+      {/* Row 2 */}
+      <div className="flex  gap-8">
+        {/* Last 2 sections */}
+        {secondList.map((section, index) => (
+          <div key={index} className="w-full lg:w-1/3 bg-white p-6 rounded-lg shadow-md">
+            <h2 className="text-2xl font-semibold text-gray-800 mb-6">{section.title}</h2>
+            <div className="space-y-4">
+              {section.services.map((service, i) => (
+                <div key={i} className="flex items-start">
+                  <div className="w-2 h-2 rounded-full border-2 border-red-400 mt-2 mr-3 flex-shrink-0"></div>
+                  <p className="text-blue-600 text-sm">{service}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        ))}
+
+        {/* Bottom Section */}
+        <div className="w-full lg:w-1/3 flex flex-col justify-between gap-6">
+          <p className="text-gray-700 text-lg leading-relaxed">
+            We take care of your cloud's end-to-end needs, ensuring it's always optimized & future-proof, while you focus solely on growing your business.
+          </p>
+          <button className="bg-blue-500 hover:bg-blue-600 text-white px-8 py-3 rounded-lg font-medium transition-colors duration-200 self-start">
+            Get in touch
+          </button>
+        </div>
       </div>
     </div>
-  </section>
-);
+  );
+};
 
-export default ConsultGrid;
-
-// <div>
-//   <div></div>
-//   <div>
-//     <div></div>
-//     <div></div>
-//     <div></div>
-//   </div>
-//   <div></div>
-// </div>
-
-// <div>
-//   <div></div>
-//   <div>
-//     <div></div>
-//     <div></div>
-//     <div></div>
-//   </div>
-//   <div></div>
-// </div>
+export default CloudCostOptimization;

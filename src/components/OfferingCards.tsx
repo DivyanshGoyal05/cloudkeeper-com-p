@@ -1,4 +1,3 @@
-
 const offerings = [
   {
     tag: "Solution",
@@ -11,6 +10,7 @@ const offerings = [
     desc: "EDP negotiation and management for maximum AWS savings.",
   },
 ];
+
 const offeringsTwo = [
   {
     tag: "Platform",
@@ -22,7 +22,6 @@ const offeringsTwo = [
     title: "CloudKeeper Lens",
     desc: "Cloud cost visibility and analytics platform.",
   },
-
   {
     tag: "Platform",
     title: "CloudKeeper Tune",
@@ -31,65 +30,70 @@ const offeringsTwo = [
 ];
 
 const OfferingCards = () => (
-  <section className="bg-white py-12 px-4">
-    <div className="max-w-6xl mx-auto">
-      <h2 className="text-blue-600 text-xl font-semibold mb-6">
-        Cloud Cost Optimization Offerings
-      </h2>
-
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {offerings.map((o, idx) => (
-          <div
-            key={idx}
-            className="bg-white rounded-xl border border-gray-200 p-6 shadow-sm hover:shadow-md transition-shadow"
-          >
-            <div>
-              <span
-                className={`inline-block px-3 py-1 rounded-full text-xs font-semibold mb-3 ${
-                  o.tag === "Solution"
-                    ? "bg-pink-100 text-pink-600"
-                    : "bg-blue-100 text-blue-700"
-                }`}
-              >
-                {o.tag}
-              </span>
-            </div>
-
-            <div className="flex">
-              <div className="flex">
-                <div>image icon</div>
-                <div>
-                  <h4 className="font-bold text-lg text-gray-900 mb-2">
-                    {o.title}
-                  </h4>
-                </div>
+  // 🟩 OUTER WRAPPER
+  <div className="flex flex-col gap-12 p-8 bg-white justify-center items-center shadow-lg rounded-lg">
+    {/* 🟦 SECTION 1: Solutions */}
+    <div className="flex gap-2 justify-center items-center border rounded-lg shadow-sm ">
+      {/* 🟨 Heading */}
+<div className="border-4 border-pink-300 bg-pink-200 flex justify-center items-center font-black text-gray-800 px-6 py-3 rounded-lg shadow-sm">
+      Solutions
+    </div> 
+      {/* 🟧 Solution Cards Grid */}
+      <div className="flex flex-wrap gap-6 border-2 border-yellow-500">
+        {offerings.map((item, idx) => (
+          // 🟥 Individual Card 
+          <div className="flex border-2 gap-4 border-grey-500" key={idx}>
+            <div className="flex-col w-full sm:w-1/2 lg:w-1/3 p-4 border rounded-lg shadow-sm">
+              {/* 🔵 Icon + Title */}
+              <div className="border-2 border-blue-500 flex items-center gap-3 mb-2 p-2 rounded">
+                {item.title === "CloudKeeper AZ" && (
+                  <img src="/icons/az.svg" alt="CloudKeeper AZ icon" className="w-10 h-10" />
+                )}
+                {item.title === "CloudKeeper EDP+" && (
+                  <img src="/icons/edp.svg" alt="CloudKeeper EDP+ icon" className="w-10 h-10" />
+                )}
+                <div className="text-lg font-semibold text-gray-900">{item.title}</div>
               </div>
-            </div>
-            <div>
-              <p className="text-gray-600 text-sm">{o.desc}</p>
-            </div>
-            <div>
-              <div className="flex">
-                <div>image icon</div>
-                <div>
-                  <h4 className="font-bold text-lg text-gray-900 mb-2">
-                    {o.title}
-                  </h4>
-                </div>
-              </div>
-            </div>
-            <div>
-              <p className="text-gray-600 text-sm">{o.desc}</p>
+              {/* 🟡 Description */}
+              <div className="text-sm text-gray-600">{item.desc}</div>
             </div>
           </div>
         ))}
       </div>
     </div>
-  </section>
+
+    {/* 🟦 SECTION 2: Platforms (Copied Layout) */}
+    <div className="flex flex-col">
+      {/* 🟨 Heading */}
+      <div className="mb-4 text-xl font-bold text-gray-800">Platforms</div>
+
+      {/* 🟧 Platform Cards Grid */}
+      <div className="flex flex-wrap gap-6">
+        {offeringsTwo.map((item, idx) => (
+          // 🟥 Individual Card
+          <div className="flex" key={idx}>
+            <div className="flex-col w-full sm:w-1/2 lg:w-1/3 p-4 border rounded-lg shadow-sm">
+              {/* 🔵 Icon + Title */}
+              <div className="border-2 border-blue-500 flex items-center gap-3 mb-2 p-2 rounded">
+                {item.title === "CloudKeeper Auto" && (
+                  <img src="/icons/auto.svg" alt="CloudKeeper Auto icon" className="w-10 h-10" />
+                )}
+                {item.title === "CloudKeeper Lens" && (
+                  <img src="/icons/lens.svg" alt="CloudKeeper Lens icon" className="w-10 h-10" />
+                )}
+                {item.title === "CloudKeeper Tune" && (
+                  <img src="/icons/tuner.svg" alt="CloudKeeper Tuner icon" className="w-10 h-10" />
+                )}
+                <div className="text-lg font-semibold text-gray-900">{item.title}</div>
+              </div>
+              {/* 🟡 Description */}
+              <div className="text-sm text-gray-600">{item.desc}</div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
 );
 
 export default OfferingCards;
-
-//solutions only one time load ho
-//ya fir second component jo load ho raha h uska number two ho
-//ya fir list ko hi divide karlo aur map alaga alag load karwa do
