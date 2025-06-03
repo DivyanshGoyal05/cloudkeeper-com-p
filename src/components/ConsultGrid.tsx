@@ -32,7 +32,7 @@ const CloudCostOptimization = () => {
   const secondList = consults.slice(2); // Manage & Improve
 
   return (
-    <div className="bg-gray-50 py-16 px-4">
+    <div className="bg-gray-50 py-16 px-4 bg-[#f1fafe]">
       {/* Row 1 */}
       <div className="flex  gap-8 mb-12">
         {/* Hero */}

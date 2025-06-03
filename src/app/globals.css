@@ -3,6 +3,13 @@
 @tailwind components;
 @tailwind utilities;
 
+.width {
+  @apply max-w-4/6;
+}
+
+
+
+
 @font-face {
   font-family: 'Metropolis-normal';
   src: url('/fonts/Metropolis-Regular.woff2') format('woff2');

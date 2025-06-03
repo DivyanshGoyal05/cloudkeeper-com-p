@@ -78,12 +78,35 @@ const BlogCards = () => (
       ))}
     </div> */}
 
-    <div className="flex  justify-center gap-8 max-w-7xl mx-auto px-4">
+    {/* <div className="flex  justify-center gap-8 max-w-7xl mx-auto px-4">
       {blogs.map((blog, idx) => (
         <a
           key={idx}
           href={blog.link}
           className="bg-white rounded-lg shadow-sm p-6 flex flex-col justify-between hover:shadow-md transition-shadow w-full min-h-[25vh]"
+        >
+          <div>
+            <h3 className="font-semibold text-gray-800 text-lg mb-4 leading-tight pl-4 border-l-2 border-red-500">
+              {blog.title}
+            </h3>
+            <p className="text-gray-600 text-sm leading-relaxed">
+              {blog.description}
+            </p>
+          </div>
+          <div className="mt-6">
+            <span className="text-blue-500 text-sm font-medium">
+              {blog.type}
+            </span>
+          </div>
+        </a>
+      ))}
+    </div> */}
+    <div className="flex justify-center gap-8 max-w-7xl mx-auto px-4">
+      {blogs.map((blog, idx) => (
+        <a
+          key={idx}
+          href={blog.link}
+          className="bg-white rounded-lg shadow-sm p-6 flex flex-col justify-between transition-transform duration-300 hover:scale-[1.02] hover:shadow-lg hover:bg-white w-full min-h-[25vh] hover:shadow-xl"
         >
           <div>
             <h3 className="font-semibold text-gray-800 text-lg mb-4 leading-tight pl-4 border-l-2 border-red-500">

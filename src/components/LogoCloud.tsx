@@ -16,12 +16,12 @@ const logos = [
 ];
 
 const LogoCloud = () => (
-  <section className="bg-white py-10 px-4 text-center">
-    <h2 className="text-gray-700 text-[30px] font-['Metropolis-Medium'] mb-2">
+  <section className="bg-white py-10 px-4 text-center bg-[#f9f9f9]">
+    <h2 className="text-gray-700 text-[30px] font-['Metropolis-Medium'] mb-2 font-bold">
       Trusted by 400+ Global Customers
     </h2>
 
-    <p className="text-gray-500 mb-6 text-[18px] font-['Metropolis-Medium']">
+    <p className="text-gray-500 mb-6 text-[18px] font-['Metropolis-Medium'] font-bold">
       Our customers saved an average of 20% on their monthly AWS, Azure, and GCP
       spend through CloudKeeper
     </p>
@@ -30,7 +30,7 @@ const LogoCloud = () => (
       {logos.map((logo, idx) => (
         <div
           key={idx}
-          className="flex items-center justify-center h-20 w-full bg-white rounded-md"
+          className="flex items-center justify-center h-20 w-full bg-[#f9f9f9] rounded-md"
         >
           <img
             src={logo.src}

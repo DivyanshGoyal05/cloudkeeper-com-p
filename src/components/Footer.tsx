@@ -100,7 +100,7 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-white border-t border-gray-200">
+    <footer className="bg-white border-t border-gray-200 ">
       <div className="flex-col w-4/6 items-center justify-center mx-auto ">
         <div className="max-w mx-auto">
           <div className="grid grid-cols-6 gap-8 md:block ">
@@ -117,7 +117,7 @@ const Footer = () => {
                         className="cursor-pointer flex md:justify-between md:items-center md:py-4"
                         onClick={() => toggleSection(section.key)}
                       >
-                        <h4 className=" text-gray-800 font-metropolis-bold text-base tracking-wide mb-4 md:mb-0 ">
+                        <h4 className=" text-gray-800 font-metropolis-bold text-base tracking-wide mb-4 md:mb-0 font-bold">
                           {section.title}
                         </h4>
                       </div>
@@ -143,7 +143,7 @@ const Footer = () => {
                       className="cursor-pointer flex md:justify-between md:items-center md:py-4"
                       onClick={() => toggleSection(footer.key)}
                     >
-                      <h4 className=" text-gray-800 font-metropolis-bold text-base tracking-wide mb-4 md:mb-0 ">
+                      <h4 className=" text-gray-800 font-metropolis-bold text-base tracking-wide mb-4 md:mb-0 font-bold container-width">
                         {footer.title}
                       </h4>
                     </div>
@@ -168,7 +168,6 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* DO NOT CHANGE: The rest of the footer is untouched */}
         <div
           className="p-4 bg-cover bg-center rounded"
           style={{
@@ -177,8 +176,8 @@ const Footer = () => {
         >
           <div className="flex justify-around items-center">
             <div className="flex-row items-center justify-center">
-              <p className="text-3xl font-extrabold text-[#2f3b4c] leading-snug">
-                Be the first to know the latest <br /> FinOps insights and news!
+              <p className="text-3xl font-extrabold text-[#2f3b4c] text-left">
+                Be the first to know the latest FinOps insights and news!
               </p>
             </div>
 
@@ -190,7 +189,7 @@ const Footer = () => {
                     type="email"
                     required
                     placeholder="Email ID*"
-                    className="w-full px-4 py-2 border border-gray-300 rounded text-gray-800 bg-white"
+                    className="w-full px-4 py-2 border border-gray-300 rounded text-gray-800 bg-white focus:outline-none"
                   />
                 </div>
 
@@ -208,12 +207,10 @@ const Footer = () => {
 
       {/* DO NOT CHANGE: Bottom section untouched */}
       <div className="bg-gray-50 py-6 mt-8">
-        <div className="  flex w-4/6 justify-between align-center mx-auto  ">
-          <div className="  gap-2 flex justify-center items-center">
+        <div className="  flex items-center justify-around gap-4 px-2">
+          <div className="  gap-2  flex justify-around items-center">
             <div>
-              <h4 className="font-bold text-black justify-center align-center">
-                Follow Us
-              </h4>
+              <h4 className="font-bold text-black ">Follow Us</h4>
             </div>
 
             <div className="flex gap-3 justify-center items-center ">
@@ -252,9 +249,20 @@ const Footer = () => {
             </div>
           </div>
 
-          <div className="flex gap-6 justify-center items-center w-4/6 py-6">
-            <div className="text-black"> Privacy Policy</div>
-            <div className="text-black"> Responsible Disclosure </div>
+          <div className="flex gap-8 justify-center items-center w-4/6 py-6">
+            <div className="text-black">
+              {" "}
+              <a href="#" className="hover:text-blue-600">
+                Privacy Policy
+              </a>
+            </div>
+
+            <div className="text-black">
+              {" "}
+              <a href="#" className="hover:text-blue-600">
+                Responsible Disclosure{" "}
+              </a>
+            </div>
           </div>
           <div className="flex flex-col gap-1 text-black border-gray-900">
             <div>

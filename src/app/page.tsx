@@ -1,36 +1,39 @@
-'use client';
+"use client";
 
-import React, { useState } from 'react';
-import AnnouncementBar from '@/components/AnnouncementBar';
-import Navbar from '@/components/Navbar';
-import HeroSection from '@/components/HeroSection';
-import LogoCloud from '@/components/LogoCloud';
-import FeatureGrid from '@/components/FeatureGrid';
-import OfferingCards from '@/components/OfferingCards';
-import ConsultGrid from '@/components/ConsultGrid';
-import StatsGrid from '@/components/StatsGrid';
-import PartnerCards from '@/components/PartnerCards';
-import Testimonial from '@/components/Testimonial';
-import BlogCards from '@/components/BlogCards';
-import ContactBanner from '@/components/ContactBanner';
-import Footer from '@/components/Footer';
+import React, { useState } from "react";
+import AnnouncementBar from "@/components/AnnouncementBar";
+import Navbar from "@/components/Navbar";
+import HeroSection from "@/components/HeroSection";
+import LogoCloud from "@/components/LogoCloud";
+import FeatureGrid from "@/components/FeatureGrid";
+import OfferingCards from "@/components/OfferingCards";
+import ConsultGrid from "@/components/ConsultGrid";
+import StatsGrid from "@/components/StatsGrid";
+import PartnerCards from "@/components/PartnerCards";
+import Testimonial from "@/components/Testimonial";
+import BlogCards from "@/components/BlogCards";
+import ContactBanner from "@/components/ContactBanner";
+import Footer from "@/components/Footer";
 
 function SearchInput({ onClose }: { onClose: () => void }) {
   // Close on outside click
   React.useEffect(() => {
     const handleClick = (e: MouseEvent) => {
-      const input = document.getElementById('search-input-box');
+      const input = document.getElementById("search-input-box");
       if (input && !input.contains(e.target as Node)) {
         onClose();
       }
     };
-    document.addEventListener('mousedown', handleClick);
-    return () => document.removeEventListener('mousedown', handleClick);
+    document.addEventListener("mousedown", handleClick);
+    return () => document.removeEventListener("mousedown", handleClick);
   }, [onClose]);
 
   return (
     <div className="flex justify-center w-full mt-8 mb-8">
-      <div id="search-input-box" className="w-[600px] bg-white rounded-2xl shadow p-4 flex items-center relative">
+      <div
+        id="search-input-box"
+        className="w-[600px] bg-white rounded-2xl shadow p-4 flex items-center relative"
+      >
         <input
           type="text"
           placeholder="Search by keywords"
@@ -61,18 +64,29 @@ export default function Home() {
         {searchOpen && (
           <div className="absolute inset-0 bg-black/20 transition-all duration-300 z-10 pointer-events-none" />
         )}
-        <div className={searchOpen ? 'filter blur-sm pointer-events-none select-none' : ''}>
-          <HeroSection />
-          <LogoCloud />
-          <FeatureGrid />
-          <OfferingCards />
-          <ConsultGrid />
-          <StatsGrid />
-          <PartnerCards />
-          <Testimonial />
-          <BlogCards />
-          <ContactBanner />
-          <Footer />
+        <div
+          className={
+            searchOpen ? "filter blur-sm pointer-events-none select-none" : ""
+          }
+        >
+          <div className="w-3/4 justify-center align-center mx-auto">
+
+          <section>
+            
+            <HeroSection />
+
+          </section>
+            <LogoCloud />
+            <FeatureGrid />
+            <OfferingCards />
+            <ConsultGrid />
+            <StatsGrid />
+            <PartnerCards />
+            <Testimonial />
+            <BlogCards />
+            <ContactBanner />
+            <Footer />
+          </div>
         </div>
       </div>
     </div>

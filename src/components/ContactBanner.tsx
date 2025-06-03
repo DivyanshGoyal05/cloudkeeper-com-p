@@ -5,9 +5,24 @@ const achievements = [
     icon: (
       <span className="inline-flex">
         <Image
+          src="/icons/GPTWCertified.svg"
+          width={90}
+          height={90}
+          alt="GPTW Certified"
+          className="object-contain"
+        />
+      </span>
+    ),
+    title: "GPTW Certified",
+    desc: "Great Place to Work Certified",
+  },
+  {
+    icon: (
+      <span className="inline-flex">
+        <Image
           src="/icons/2logo.png"
-          width={100}
-          height={100}
+          width={90}
+          height={90}
           alt="Our Team"
           className="object-contain"
         />
@@ -21,8 +36,8 @@ const achievements = [
       <span className="inline-flex">
         <Image
           src="/icons/3logo.png"
-          width={100}
-          height={100}
+          width={90}
+          height={90}
           alt="Innovation"
           className="object-contain"
         />
@@ -36,8 +51,8 @@ const achievements = [
       <span className="inline-flex">
         <Image
           src="/icons/5logo.png"
-          width={100}
-          height={100}
+          width={90}
+          height={90}
           alt="Awards"
           className="object-contain"
         />
@@ -51,8 +66,8 @@ const achievements = [
       <span className="inline-flex">
         <Image
           src="/icons/6logo.png"
-          width={100}
-          height={100}
+          width={90}
+          height={90}
           alt="Security"
           className="object-contain"
         />
@@ -66,8 +81,8 @@ const achievements = [
       <span className="inline-flex">
         <Image
           src="/icons/7logo.png"
-          width={100}
-          height={100}
+          width={90}
+          height={90}
           alt="Support"
           className="object-contain"
         />
@@ -81,8 +96,8 @@ const achievements = [
       <span className="inline-flex">
         <Image
           src="/icons/8logo.png"
-          width={100}
-          height={100}
+          width={90}
+          height={90}
           alt="Growth"
           className="object-contain"
         />
@@ -96,8 +111,8 @@ const achievements = [
       <span className="inline-flex">
         <Image
           src="/icons/9logo.png"
-          width={100}
-          height={100}
+          width={90}
+          height={90}
           alt="Optimization"
           className="object-contain"
         />
@@ -111,8 +126,8 @@ const achievements = [
       <span className="inline-flex">
         <Image
           src="/icons/10logo.png"
-          width={100}
-          height={100}
+          width={90}
+          height={90}
           alt="Analytics"
           className="object-contain"
         />
@@ -126,8 +141,8 @@ const achievements = [
       <span className="inline-flex">
         <Image
           src="/icons/partnership.svg"
-          width={100}
-          height={100}
+          width={90}
+          height={90}
           alt="Partnerships"
           className="object-contain"
         />
@@ -142,18 +157,18 @@ const ContactBanner = () => (
   <>
     {/* Row for text + button */}
     <div
-      className="flex justify-center items-center bg-blue-900  h-45 
+      className="flex justify-center items-center bg-[#2b3c66] h-45 
     "
       style={{ backgroundImage: "url('/icons/section-bg.webp')" }}
     >
-      <div className="text-2xl font-gray-900 max-w-xl">
+      <div className="text-2xl font-gray-900 max-w-xl font-bold">
         Speak with our advisors to learn how you can take control of your Cloud
         Cost
       </div>
 
       <a
         href="#"
-        className="mt-4 sm:mt-0 px-8 py-3 bg-white text-blue-900 rounded font-semibold text-lg shadow hover:bg-blue-800 hover:text-white transition"
+        className="mt-4 sm:mt-0 px-8 py-3 bg-white text-[#86bce6] rounded font-semibold text-lg shadow hover:bg-blue-800 hover:text-white transition"
       >
         Contact us
       </a>
@@ -167,7 +182,7 @@ const ContactBanner = () => (
       {achievements.map((item, index) => (
         <div
           key={index}
-          className="flex items-center max-w-[150px] text-center p-0 "
+          className="flex items-center max-w-[150px] text-center p-4 "
         >
           {item.icon}
         </div>

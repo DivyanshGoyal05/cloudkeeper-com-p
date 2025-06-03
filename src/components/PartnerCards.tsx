@@ -27,7 +27,7 @@ const PartnerCards = () => (
       {partners.map((p, idx) => (
         <div
           key={idx}
-          className="bg-blue-900 rounded-lg shadow p-6 flex flex-col items-center text-center w-full md:w-1/3"
+          className="bg-blue-900 rounded-lg shadow p-6 flex flex-col items-center text-center min-w-1/3 h-full md:w-1/3"
         >
           <div className="flex items-center justify-center h-20 w-full bg-blue-900 rounded-md mb-4">
             <img

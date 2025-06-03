@@ -4,7 +4,7 @@ import Image from "next/image";
 const HeroSection = () => (
   <div
     className=" flex flex-row gap-30 justify-center
- items-start bg-gray-50 py-12 px-4"
+ items-start bg-gray-50 py-12 px-4 bg-white"
   >
     <div className="flex flex-col ">
       {/* <section className="w-full bg-white py-12 px-4 text-center flex flex-col items-start"> */}
