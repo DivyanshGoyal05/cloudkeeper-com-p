@@ -1,6 +1,6 @@
 // tailwind.config.js
 module.exports = {
-    content: ['*'], // Adjust based on your project structure
+    content: ['*'], // Ideally should be more specific like './src/**/*.{js,ts,jsx,tsx}'
     theme: {
         extend: {
             fontFamily: {
@@ -8,13 +8,16 @@ module.exports = {
                 'metropolis-semibold': ['Metropolis-SemiBold', 'sans-serif'],
                 'metropolis-bold': ['Metropolis-Bold', 'sans-serif'],
             },
+            animation: {
+                marquee: 'marquee 20s linear infinite', 
+            },
+            keyframes: {
+                marquee: {
+                    '0%': { transform: 'translateX(0%)' },
+                    '100%': { transform: 'translateX(-50%)' },
+                }
+            }
         },
-        // screens: {
-        //     'sm': { max: '639px' },
-        //     'md': { max: '767px' },
-        //     'lg': { max: '1023px' },
-        //     'xl': { max: '1279px' },
-        // },
     },
     plugins: [],
 }

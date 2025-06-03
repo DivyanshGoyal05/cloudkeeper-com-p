@@ -6,7 +6,6 @@ import SolutionsDropdown from "./Dropdown/SolutionsDropdown";
 import PlatformsDropdown from "./Dropdown/PlatformsDropdown";
 import CapabilitiesDropdown from "./Dropdown/CapabilitiesDropdown";
 import InsightsDropdown from "./Dropdown/InsightsDropdown";
-import { buttonBaseClasses } from "@mui/material";
 
 const navLinks = [
   { label: "Solutions", href: "#", hasDropdown: true },
@@ -21,7 +20,7 @@ const navLinks = [
   { label: "Success Stories", href: "#", hasDropdown: false },
   { label: "Pricing", href: "#", hasDropdown: false },
   { label: "Company", href: "#", hasDropdown: true },
-  {}
+  {},
 ];
 
 const Navbar = ({
@@ -74,17 +73,18 @@ const Navbar = ({
               onMouseLeave={() => link.hasDropdown && setOpenDropdown(false)}
             >
               <button
-                className={`flex items-center gap-1 px-2 py-1 rounded transition font-mp ${openDropdown === link.label
-                  ? "text-pink-600"
-                  : "text-gray-700"
-                  } hover:text-pink-600 focus:outline-none focus:ring-2 focus:ring-pink-200`}
+                className={`flex items-center gap-1 px-2 py-1 rounded transition font-mp ${
+                  openDropdown === link.label
+                    ? "text-pink-600"
+                    : "text-gray-700"
+                } hover:text-pink-600 focus:outline-none focus:ring-2 focus:ring-pink-200`}
                 aria-haspopup="true"
                 aria-expanded={openDropdown === link.label}
                 onClick={() =>
                   link.hasDropdown
                     ? setOpenDropdown((prev) =>
-                      prev === link.label ? false : link.label
-                    )
+                        prev === link.label ? false : link.label
+                      )
                     : undefined
                 }
               >
@@ -92,8 +92,9 @@ const Navbar = ({
 
                 {link.hasDropdown && (
                   <svg
-                    className={`w-4 h-4 transition-transform ${openDropdown === link.label ? "rotate-180" : ""
-                      }`}
+                    className={`w-4 h-4 transition-transform ${
+                      openDropdown === link.label ? "rotate-180" : ""
+                    }`}
                     fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
@@ -120,8 +121,6 @@ const Navbar = ({
             >
               Contact Us
             </a>
-
-
           </div>
           <button
             className="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-200"
@@ -141,7 +140,6 @@ const Navbar = ({
           </button>
         </div>
       </div>
-
 
       {/* Mobile Actions */}
       <div className="sm:flex items-center gap-2 sm:hidden">
@@ -185,18 +183,23 @@ const Navbar = ({
       {/* Mobile Menu */}
       <MobileMenu open={mobileOpen} onClose={() => setMobileOpen(false)} />
 
-      {/* Absolute positioned dropdowns outside the nav links */}
-      {openDropdown === "Company" && <CompanyDropdown section="Company" />}
-      {openDropdown === "Solutions" && (
-        <SolutionsDropdown section="Solutions" />
-      )}
-      {openDropdown === "Platforms" && (
-        <PlatformsDropdown section="Platforms" />
-      )}
-      {openDropdown === "Capabilities" && (
-        <CapabilitiesDropdown section="CONSULT" />
-      )}
-      {openDropdown === "Insights" && <InsightsDropdown section="Insights" />}
+      {/* Wrapped Dropdowns for hover stability */}
+      <div
+        onMouseEnter={() => setOpenDropdown(openDropdown)}
+        onMouseLeave={() => setOpenDropdown(false)}
+      >
+        {openDropdown === "Company" && <CompanyDropdown section="Company" />}
+        {openDropdown === "Solutions" && (
+          <SolutionsDropdown section="Solutions" />
+        )}
+        {openDropdown === "Platforms" && (
+          <PlatformsDropdown section="Platforms" />
+        )}
+        {openDropdown === "Capabilities" && (
+          <CapabilitiesDropdown section="CONSULT" />
+        )}
+        {openDropdown === "Insights" && <InsightsDropdown section="Insights" />}
+      </div>
     </nav>
   );
 };
