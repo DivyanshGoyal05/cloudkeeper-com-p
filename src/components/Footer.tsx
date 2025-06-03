@@ -13,19 +13,24 @@ const Footer = () => {
 
   const footerData = [
     {
-      title: "SOLUTIONS",
-      key: "solutions",
-      items: ["CloudKeeper AZ", "CloudKeeper EDP+"],
-    },
-    {
-      title: "PLATFORMS",
-      key: "platforms",
-      items: [
-        "CloudKeeper Auto",
-        "CloudKeeper Tuner",
-        "CloudKeeper Lens - AWS",
-        "CloudKeeper Lens - GCP",
-        "CloudKeeper Lens - Azure",
+      key: "solutions-platforms",
+      sections: [
+        {
+          title: "SOLUTIONS",
+          key: "solutions",
+          items: ["CloudKeeper AZ", "CloudKeeper EDP+"],
+        },
+        {
+          title: "PLATFORMS",
+          key: "platforms",
+          items: [
+            "CloudKeeper Auto",
+            "CloudKeeper Tuner",
+            "CloudKeeper Lens - AWS",
+            "CloudKeeper Lens - GCP",
+            "CloudKeeper Lens - Azure",
+          ],
+        },
       ],
     },
     {
@@ -98,52 +103,72 @@ const Footer = () => {
     <footer className="bg-white border-t border-gray-200">
       <div className="flex-col w-4/6 items-center justify-center mx-auto ">
         <div className="max-w mx-auto">
-          {/* Desktop-first: Grid layout, then override for mobile */}
           <div className="grid grid-cols-6 gap-8 md:block ">
             {footerData.map((footer) => (
               <div
                 key={footer.key}
                 className="md:border-b md:border-gray-100 md:last:border-none"
               >
-                {/* Desktop: Title only, Mobile: Clickable header with arrow */}
-                <div
-                  className="cursor-pointer flex md:justify-between md:items-center md:py-4"
-                  onClick={() => toggleSection(footer.key)}
-                >
-                  <h4 className=" text-gray-800 font-metropolis-bold text-base tracking-wide mb-4 md:mb-0 ">
-                    {footer.title}
-                  </h4>
-                  <svg
-                    className="hidden md:block w-5 h-5 text-gray-600 transition-transform duration-200 md:${
-                      openSections[footer.key] ? 'rotate-180' : ''
-                    }"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path />
-                  </svg>
-                </div>
-
-                {/* Desktop: Always visible, Mobile: Toggle visibility */}
-                <div className="block md:${openSections[footer.key] ? 'block' : 'hidden'} md:pb-4">
-                  <ul className="space-y-2">
-                    {footer.items.map((item, index) => (
-                      <li key={index}>
-                        <a
-                          href="#"
-                          className="font-metropolis-bold text-gray-800 text-base hover:text-pink-600 transition-colors py-[8px]"
-                        >
-                          {item}
-                        </a>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
+                {/* Handle grouped sections */}
+                {footer.sections ? (
+                  footer.sections.map((section) => (
+                    <div key={section.key}>
+                      <div
+                        className="cursor-pointer flex md:justify-between md:items-center md:py-4"
+                        onClick={() => toggleSection(section.key)}
+                      >
+                        <h4 className=" text-gray-800 font-metropolis-bold text-base tracking-wide mb-4 md:mb-0 ">
+                          {section.title}
+                        </h4>
+                      </div>
+                      <div className="block md:block md:pb-4">
+                        <ul className="space-y-2">
+                          {section.items.map((item, index) => (
+                            <li key={index}>
+                              <a
+                                href="#"
+                                className="font-metropolis-bold text-gray-800 text-base hover:text-pink-600 transition-colors py-[8px]"
+                              >
+                                {item}
+                              </a>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    </div>
+                  ))
+                ) : (
+                  <>
+                    <div
+                      className="cursor-pointer flex md:justify-between md:items-center md:py-4"
+                      onClick={() => toggleSection(footer.key)}
+                    >
+                      <h4 className=" text-gray-800 font-metropolis-bold text-base tracking-wide mb-4 md:mb-0 ">
+                        {footer.title}
+                      </h4>
+                    </div>
+                    <div className="block md:block md:pb-4">
+                      <ul className="space-y-2">
+                        {footer.items.map((item, index) => (
+                          <li key={index}>
+                            <a
+                              href="#"
+                              className="font-metropolis-bold text-gray-800 text-base hover:text-pink-600 transition-colors py-[8px]"
+                            >
+                              {item}
+                            </a>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </>
+                )}
               </div>
             ))}
           </div>
         </div>
+
+        {/* DO NOT CHANGE: The rest of the footer is untouched */}
         <div
           className="p-4 bg-cover bg-center rounded"
           style={{
@@ -181,10 +206,7 @@ const Footer = () => {
         </div>
       </div>
 
-      {/* Footer Bottom */}
-      {/* Newsletter Section */}
-
-      {/* Social and Badges */}
+      {/* DO NOT CHANGE: Bottom section untouched */}
       <div className="bg-gray-50 py-6 mt-8">
         <div className="  flex w-4/6 justify-between align-center mx-auto  ">
           <div className="  gap-2 flex justify-center items-center">
@@ -196,16 +218,36 @@ const Footer = () => {
 
             <div className="flex gap-3 justify-center items-center ">
               <a href="#" className="hover:opacity-80">
-                <Image src="/icons/in.svg" alt="LinkedIn" width={24} height={24} />
+                <Image
+                  src="/icons/in.svg"
+                  alt="LinkedIn"
+                  width={24}
+                  height={24}
+                />
               </a>
               <a href="#" className="hover:opacity-80">
-                <Image src="/icons/twitter_0.svg" alt="Twitter" width={24} height={24} />
+                <Image
+                  src="/icons/twitter_0.svg"
+                  alt="Twitter"
+                  width={24}
+                  height={24}
+                />
               </a>
               <a href="#" className="hover:opacity-80">
-                <Image src="/icons/youtube_0.svg" alt="YouTube" width={24} height={24} />
+                <Image
+                  src="/icons/youtube_0.svg"
+                  alt="YouTube"
+                  width={24}
+                  height={24}
+                />
               </a>
               <a href="#" className="hover:opacity-80">
-                <Image src="/icons/medium-logo-93CDCF6451-seeklogo.com 1.svg" alt="Medium" width={24} height={24} />
+                <Image
+                  src="/icons/medium-logo-93CDCF6451-seeklogo.com 1.svg"
+                  alt="Medium"
+                  width={24}
+                  height={24}
+                />
               </a>
             </div>
           </div>
@@ -216,7 +258,12 @@ const Footer = () => {
           </div>
           <div className="flex flex-col gap-1 text-black border-gray-900">
             <div>
-              <Image src="/icons/Cloudkeeper_New.svg" alt="CloudKeeper Logo" width={150} height={40} />
+              <Image
+                src="/icons/Cloudkeeper_New.svg"
+                alt="CloudKeeper Logo"
+                width={150}
+                height={40}
+              />
             </div>
             <div>Copyright ©2025</div>
           </div>

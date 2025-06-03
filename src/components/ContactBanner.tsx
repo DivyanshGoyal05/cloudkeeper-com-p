@@ -6,8 +6,8 @@ const achievements = [
       <span className="inline-flex">
         <Image
           src="/icons/2logo.png"
-          width={48}
-          height={48}
+          width={100}
+          height={100}
           alt="Our Team"
           className="object-contain"
         />
@@ -21,8 +21,8 @@ const achievements = [
       <span className="inline-flex">
         <Image
           src="/icons/3logo.png"
-          width={48}
-          height={48}
+          width={100}
+          height={100}
           alt="Innovation"
           className="object-contain"
         />
@@ -36,8 +36,8 @@ const achievements = [
       <span className="inline-flex">
         <Image
           src="/icons/5logo.png"
-          width={48}
-          height={48}
+          width={100}
+          height={100}
           alt="Awards"
           className="object-contain"
         />
@@ -51,8 +51,8 @@ const achievements = [
       <span className="inline-flex">
         <Image
           src="/icons/6logo.png"
-          width={48}
-          height={48}
+          width={100}
+          height={100}
           alt="Security"
           className="object-contain"
         />
@@ -66,8 +66,8 @@ const achievements = [
       <span className="inline-flex">
         <Image
           src="/icons/7logo.png"
-          width={48}
-          height={48}
+          width={100}
+          height={100}
           alt="Support"
           className="object-contain"
         />
@@ -81,8 +81,8 @@ const achievements = [
       <span className="inline-flex">
         <Image
           src="/icons/8logo.png"
-          width={48}
-          height={48}
+          width={100}
+          height={100}
           alt="Growth"
           className="object-contain"
         />
@@ -96,8 +96,8 @@ const achievements = [
       <span className="inline-flex">
         <Image
           src="/icons/9logo.png"
-          width={48}
-          height={48}
+          width={100}
+          height={100}
           alt="Optimization"
           className="object-contain"
         />
@@ -111,8 +111,8 @@ const achievements = [
       <span className="inline-flex">
         <Image
           src="/icons/10logo.png"
-          width={48}
-          height={48}
+          width={100}
+          height={100}
           alt="Analytics"
           className="object-contain"
         />
@@ -126,8 +126,8 @@ const achievements = [
       <span className="inline-flex">
         <Image
           src="/icons/partnership.svg"
-          width={48}
-          height={48}
+          width={100}
+          height={100}
           alt="Partnerships"
           className="object-contain"
         />
@@ -142,7 +142,7 @@ const ContactBanner = () => (
   <>
     {/* Row for text + button */}
     <div
-      className="flex flex-wrap justify-center items-center bg-blue-900 mb-4
+      className="flex justify-center items-center bg-blue-900  h-45 
     "
       style={{ backgroundImage: "url('/icons/section-bg.webp')" }}
     >
@@ -160,11 +160,14 @@ const ContactBanner = () => (
     </div>
 
     {/* Flex row for achievements */}
-    <div className="flex  justify-center gap-6 bg-blue-300         ">
+    <div
+      className="flex justify-center gap-6 h-45"
+      style={{ backgroundColor: "#f1fafe" }}
+    >
       {achievements.map((item, index) => (
         <div
           key={index}
-          className="flex items-center max-w-[150px] text-center"
+          className="flex items-center max-w-[150px] text-center p-0 "
         >
           {item.icon}
         </div>

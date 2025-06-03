@@ -9,7 +9,7 @@ module.exports = {
                 'metropolis-bold': ['Metropolis-Bold', 'sans-serif'],
             },
             animation: {
-                marquee: 'marquee 20s linear infinite', // ✅ Fixed this line
+                marquee: 'marquee 20s linear infinite', 
             },
             keyframes: {
                 marquee: {
