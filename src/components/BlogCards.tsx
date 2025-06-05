@@ -101,7 +101,7 @@ const BlogCards = () => (
         </a>
       ))}
     </div> */}
-    <div className="flex justify-center gap-8 max-w-7xl mx-auto px-4">
+    <div className="flex justify-center gap-8  ">
       {blogs.map((blog, idx) => (
         <a
           key={idx}

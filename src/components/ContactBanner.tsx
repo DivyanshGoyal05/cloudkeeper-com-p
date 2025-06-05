@@ -157,7 +157,7 @@ const ContactBanner = () => (
   <>
     {/* Row for text + button */}
     <div
-      className="flex justify-center items-center bg-[#2b3c66] h-45 
+      className="flex justify-around items-center bg-[#2b3c66] h-45 p-4
     "
       style={{ backgroundImage: "url('/icons/section-bg.webp')" }}
     >
@@ -176,14 +176,11 @@ const ContactBanner = () => (
 
     {/* Flex row for achievements */}
     <div
-      className="flex justify-center gap-6 h-45"
+      className="flex justify-center "
       style={{ backgroundColor: "#f1fafe" }}
     >
       {achievements.map((item, index) => (
-        <div
-          key={index}
-          className="flex items-center max-w-[150px] text-center p-4 "
-        >
+        <div key={index} className="flex items-center  text-center p-2">
           {item.icon}
         </div>
       ))}

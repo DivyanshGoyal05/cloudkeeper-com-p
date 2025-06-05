@@ -3,7 +3,7 @@
 @tailwind components;
 @tailwind utilities;
 
-.width {
+.container-width {
   @apply max-w-4/6;
 }
 

@@ -69,22 +69,78 @@ export default function Home() {
             searchOpen ? "filter blur-sm pointer-events-none select-none" : ""
           }
         >
-          <div className="w-3/4 justify-center align-center mx-auto">
+          <div>
+            <div className="bg-white">
+              <div className="max-w-[1200px] mx-auto px-4 py-16">
+                <HeroSection />
+              </div>
+            </div>
 
-          <section>
-            
-            <HeroSection />
+            <div className="bg-white">
+              <div className="max-w-[1200px] mx-auto px-4 py-16">
+                <LogoCloud />
+              </div>
+            </div>
 
-          </section>
-            <LogoCloud />
-            <FeatureGrid />
-            <OfferingCards />
-            <ConsultGrid />
-            <StatsGrid />
-            <PartnerCards />
-            <Testimonial />
-            <BlogCards />
-            <ContactBanner />
+            <div className="bg-sky-50">
+              <div className="max-w-[1200px] mx-auto px-4 py-16">
+                <FeatureGrid />
+              </div>
+            </div>
+
+            <div className="bg-white">
+              <div className="max-w-[1200px] mx-auto px-4 py-16">
+                <OfferingCards />
+              </div>
+            </div>
+
+            <div className="bg-[#f1fafe]">
+              <div className="max-w-[1200px] mx-auto px-4 py-16">
+                <ConsultGrid />
+              </div>
+            </div>
+
+            <div className="bg-white">
+              <div>
+                <div className="max-w-[1200px] mx-auto px-4 py-16">
+                  <StatsGrid />
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-white">
+              <div className="max-w-[1200px] mx-auto px-4 py-16">
+                <PartnerCards />
+              </div>
+            </div>
+
+            <div className="bg-white">
+              <div className="max-w-[1200px] mx-auto px-4 py-16">
+                <Testimonial />
+              </div>
+            </div>
+
+            <div className="bg-white">
+              <div className="max-w-[1200px] mx-auto px-4 py-16">
+                <BlogCards />
+              </div>
+            </div>
+
+            <div
+              className="bg-[#2b3c66] bg-cover bg-no-repeat bg-center"
+              style={{ backgroundImage: "url('/icons/section-bg.webp')" }}
+            >
+              <div className="max-w-[1200px] mx-auto px-4 py-16">
+                <ContactBanner />
+              </div>
+            </div>
+
+            <div className="bg-white border-t border-gray-200">
+              <div className="max-w-[1200px] mx-auto px-4 py-16">
+                <Footer />
+              </div>
+            </div>
+
             <Footer />
           </div>
         </div>

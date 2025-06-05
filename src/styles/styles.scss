@@ -3,11 +3,22 @@
 
     @media(min-width: 768px) {
         .footer-section{
-            
+
         }
         background-color: #f8f9fa;
         padding: 20px;
         text-align: center;
+    }
+}
+
+.contact-banner{
+    @media(min-width: none;768px) {
+        .contact-banner{
+            
+justify-content: center;
+align-items: center;
+            text-align: center;
+        }
     }
 }
 

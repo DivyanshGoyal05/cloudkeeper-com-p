@@ -101,7 +101,7 @@ const Footer = () => {
 
   return (
     <footer className="bg-white border-t border-gray-200 ">
-      <div className="flex-col w-4/6 items-center justify-center mx-auto ">
+      <div className="flex-col  items-center justify-center mx-auto ">
         <div className="max-w mx-auto">
           <div className="grid grid-cols-6 gap-8 md:block ">
             {footerData.map((footer) => (
@@ -169,12 +169,12 @@ const Footer = () => {
         </div>
 
         <div
-          className="p-4 bg-cover bg-center rounded"
+          className="p-6 bg-cover bg-center rounded"
           style={{
             backgroundImage: "url('/icons/top-banner-exit-popup.png')",
           }}
         >
-          <div className="flex justify-around items-center">
+          <div className="flex justify-around items-center gap-8 ">
             <div className="flex-row items-center justify-center">
               <p className="text-3xl font-extrabold text-[#2f3b4c] text-left">
                 Be the first to know the latest FinOps insights and news!
@@ -249,7 +249,7 @@ const Footer = () => {
             </div>
           </div>
 
-          <div className="flex gap-8 justify-center items-center w-4/6 py-6">
+          <div className="flex gap-8 justify-center items-center py-6">
             <div className="text-black">
               {" "}
               <a href="#" className="hover:text-blue-600">

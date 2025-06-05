@@ -19,7 +19,7 @@ const HeroSection = () => (
           </h1>
         </div>
 
-        <div className="flex flex-wrap justify-center gap-4 mb-6 text-lg font-medium text-gray-700">
+        <div className="flex justify-center gap-4 mb-6 text-lg font-medium text-gray-700">
           <div className="border-r-2 border-gray-200  px-4 py-2">
             <div>
               <Image
@@ -30,8 +30,9 @@ const HeroSection = () => (
               />
             </div>
             <span>
-              Unlimited Cloud <br />
-              Support
+              Unlimited
+              <br />
+              Cloud Support
             </span>
           </div>
 
