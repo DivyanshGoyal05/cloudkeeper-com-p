@@ -71,12 +71,12 @@ export default function Home() {
         >
           <div>
             <div className="bg-white">
-              <div className="max-w-[1200px] mx-auto px-4 py-16">
+              <div className="max-w-[1200px] mx-auto py-16">
                 <HeroSection />
               </div>
             </div>
 
-            <div className="bg-white">
+            <div className="bg-[#f9f9f9]">
               <div className="max-w-[1200px] mx-auto px-4 py-16">
                 <LogoCloud />
               </div>
@@ -88,7 +88,15 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="bg-white">
+            <div
+              className="bg-white z-10"
+              style={{
+                backgroundImage: "url('/icons/Homepagebg.png')",
+                backgroundRepeat: "no-repeat",
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+              }}
+            >
               <div className="max-w-[1200px] mx-auto px-4 py-16">
                 <OfferingCards />
               </div>

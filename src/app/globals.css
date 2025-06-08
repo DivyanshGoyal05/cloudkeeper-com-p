@@ -3,6 +3,8 @@
 @tailwind components;
 @tailwind utilities;
 
+@import "../styles/styles.scss";
+
 .container-width {
   @apply max-w-4/6;
 }

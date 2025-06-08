@@ -2,21 +2,20 @@ import React from "react";
 import Image from "next/image";
 
 const HeroSection = () => (
-  <div
-    className=" flex flex-row gap-30 justify-center
- items-start bg-gray-50 py-12 px-4 bg-white"
-  >
-    <div className="flex flex-col ">
-      {/* <section className="w-full bg-white py-12 px-4 text-center flex flex-col items-start"> */}
-      <section className="w-full bg-white py-12 px-4 text-left flex flex-col items-start">
+  <div className=" flex flex-row items-start bg-gray-50 bg-white">
+    {/* <div className="flex flex-col w-[56%] "> */}
+    <div className="flex flex-col w-[56%] mr-[80px] pr-[80px]">
+      <div className="w-full bg-white  text-left flex flex-col items-start">
         <div className="align-text-start ">
-          <h1 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">
-            Your Comprehensive <br />{" "}
-            <span className="text-pink-500">
-              Cloud Cost Optimization Partner
-            </span>{" "}
-            for
-          </h1>
+          <div className="text-3xl md:text-4xl font- mb-4 text-gray-900 font-bitter space-y-2 ">
+            <div>Your Comprehensive</div>
+            <div>
+              <span className="text-pink-500">
+                Cloud Cost Optimization Partner {""}
+              </span>
+              <span className="text-black">for</span>{" "}
+            </div>
+          </div>
         </div>
 
         <div className="flex justify-center gap-4 mb-6 text-lg font-medium text-gray-700">
@@ -54,7 +53,7 @@ const HeroSection = () => (
             {" "}
             <div>
               <Image
-                src={"/icons/lens.svg"}
+                src={"/icons/h3.svg"}
                 width={50}
                 height={43}
                 alt="mountain-1 image"
@@ -69,22 +68,22 @@ const HeroSection = () => (
 
         <a
           href="#"
-          className="inline-block px-8 py-3 bg-[#4398d7] text-white rounded font-semibold text-lg shadow hover:bg-blue-800 transition"
+          className="inline-block px-16 py-3 bg-[#4398d7] text-white rounded font-semibold text-lg shadow hover:bg-blue-800 transition"
         >
           Talk to us
         </a>
-      </section>
+      </div>
     </div>
-    <div className="rightsec">
-      <h1>rightsec</h1>
-      <div className="mb-6">
-        <video width="640" height="360" controls>
-          <source
-            src="https://youtu.be/QfaoiYUU_PM?feature=shared"
-            type="video/mp4"
-          />
-          Your browser does not support the video tag.
-        </video>
+    <div className="rightsec w-[44%]">
+      <div className="aspect-video w-full rounded-lg shadow overflow-hidden">
+        <iframe
+          className="w-full h-full"
+          src="https://www.youtube.com/embed/QfaoiYUU_PM"
+          title="YouTube video"
+          frameBorder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
+        ></iframe>
       </div>
     </div>
   </div>

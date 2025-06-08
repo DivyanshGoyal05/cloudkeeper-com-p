@@ -7,6 +7,8 @@ module.exports = {
                 "mp": ['Metropolis-normal', 'sans-serif'],
                 'metropolis-semibold': ['Metropolis-SemiBold', 'sans-serif'],
                 'metropolis-bold': ['Metropolis-Bold', 'sans-serif'],
+                'metropolis-medium': ['Metropolis-Medium', 'sans-serif'],
+                'bitter': ['Bitter', 'serif']
             },
             animation: {
                 marquee: 'marquee 20s linear infinite',

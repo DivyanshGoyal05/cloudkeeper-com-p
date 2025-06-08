@@ -16,7 +16,7 @@ const logos = [
 ];
 
 const LogoCloud = () => (
-  <section className="bg-white py-10 px-4 text-center bg-[#f9f9f9]">
+  <section className="bg-[#f9f9f9] py-10 px-4 text-center">
     <h2 className="text-gray-700 text-[30px] font-['Metropolis-Medium'] mb-2">
       Trusted by 400+ Global Customers
     </h2>
@@ -26,7 +26,7 @@ const LogoCloud = () => (
       spend through CloudKeeper
     </p>
 
-    <div className="grid grid-cols-6 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-6 max-w-6xl mx-auto">
+    <div className="grid grid-cols-6 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-6 max-w-6xl mx-auto bg-[#f9f9f9]">
       {logos.map((logo, idx) => (
         <div
           key={idx}
