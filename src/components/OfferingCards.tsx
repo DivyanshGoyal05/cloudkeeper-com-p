@@ -1,3 +1,6 @@
+// src/components/OfferingCards.jsx
+import React from "react";
+
 const offerings = [
   {
     tag: "Solution",
@@ -7,7 +10,7 @@ const offerings = [
   {
     tag: "Solution",
     title: "CloudKeeper EDP+",
-    desc: "EDP negotiation and management  for maximum AWS savings.",
+    desc: "EDP negotiation and management for maximum AWS savings.",
   },
 ];
 
@@ -29,111 +32,93 @@ const offeringsTwo = [
   },
 ];
 
-const OfferingCards = () => (
-  // 🟩 OUTER WRAPPER
-  <div
-    className="flex flex-col gap-12 p-8 bg-white justify-center items-center"
-    // style={{ backgroundImage: "url('public/icons/Homepagebg.png')" }}
-    style={{
-      backgroundImage: "url('/icons/Homepagebg.png')",
-      backgroundRepeat: "no-repeat",
-      backgroundSize: "cover",
-      backgroundPosition: "center",
-    }}
-  >
-    {/* 🟦 SECTION 1: Solutions */}
-    <div className="flex gap-2 justify-around items-center  rounded-lg shadow-sm w-full">
-      {/* 🟨 Heading */}
-      <div className="bg-pink-100 text-black rounded-full px-6 py-2 focus:outline-none focus:ring-2 focus:ring-pink-500 focus:ring-opacity-50">
-        Solutions
-      </div>
-      {/* 🟧 Solution Cards Grid */}
-      <div className="flex flex-wrap gap-6  p-4  ">
-        {offerings.map((item, idx) => (
-          // 🟥 Individual Card
-          <div
-            className="flex  gap-4  rounded-r-2xl hover:border-pink-300 transition-all duration-300 "
-            key={idx}
-          >
-            <div className="flex-col w-full border-2 border-gray-100 p-9 ">
-              {/* 🔵 Icon + Title */}
-              <div className="  flex items-center gap-3 mb-2 p-4 ">
-                {item.title === "CloudKeeper AZ" && (
-                  <img
-                    src="/icons/az.svg"
-                    alt="CloudKeeper AZ icon"
-                    className="w-10 h-10 object-cover rounded-none"
-                  />
-                )}
-                {item.title === "CloudKeeper EDP+" && (
-                  <img
-                    src="/icons/edp.svg"
-                    alt="CloudKeeper EDP+ icon"
-                    className="w-10 h-10 object-cover rounded-none"
-                  />
-                )}
-                <div className="text-lg font-semibold text-gray-900">
-                  {item.title}
-                </div>
-              </div>
-              {/* 🟡 Description */}
-              <div className="text-sm text-gray-600">{item.desc}</div>
-            </div>
-          </div>
-        ))}
+const OfferingCard = ({ icon, title, desc }) => (
+  <div className="bg-white rounded-lg shadow-md border border-gray-200 p-6 transition duration-300 ease-in-out hover:shadow-xl hover:border-blue-500">
+    <div className="flex items-center justify-center mb-4">
+      <div className="w-16 h-16 bg-blue-50 p-3 rounded-full flex items-center justify-center">
+        <img src={icon} alt={`${title} icon`} className="w-10 h-10" />
       </div>
     </div>
-
-    {/* 🟦 SECTION 2: Platforms (Copied Layout) */}
-    <div className="flex  p-4 m-4 w-full">
-      {/* 🟨 Heading */}
-      <div className="flex gap-2 justify-center items-center  rounded-lg shadow-sm ">
-        <div className="bg-pink-100 text-black rounded-full px-6 py-2 focus:outline-none focus:ring-2 focus:ring-pink-500 focus:ring-opacity-50 p-4">
-          Platforms
-        </div>
-      </div>
-
-      {/* 🟧 Platform Cards Grid */}
-      <div className="grid grid-cols-2 m-4 p-4 ">
-        {offeringsTwo.map((item, idx) => (
-          // 🟥 Individual Card
-          <div className="flex  m-4" key={idx}>
-            <div className="flex-col w-full border-2 border-gray-100 p-9 m-9 ">
-              {/* 🔵 Icon + Title */}
-              <div className=" flex items-center gap-3 mb-2 p-2  ">
-                {item.title === "CloudKeeper Auto" && (
-                  <img
-                    src="/icons/auto.svg"
-                    alt="CloudKeeper Auto icon"
-                    className="w-10 h-10 object-cover rounded-none"
-                  />
-                )}
-                {item.title === "CloudKeeper Lens" && (
-                  <img
-                    src="/icons/lens.svg"
-                    alt="CloudKeeper Lens icon"
-                    className="w-10 h-10 object-cover rounded-none"
-                  />
-                )}
-                {item.title === "CloudKeeper Tune" && (
-                  <img
-                    src="/icons/tuner.svg"
-                    alt="CloudKeeper Tuner icon"
-                    className="w-10 h-10 object-cover rounded-none"
-                  />
-                )}
-                <div className="text-lg font-semibold text-gray-900">
-                  {item.title}
-                </div>
-              </div>
-              {/* 🟡 Description */}
-              <div className="text-sm text-gray-600">{item.desc}</div>
-            </div>
-          </div>
-        ))}
-      </div>
-    </div>
+    <h3 className="text-xl font-semibold text-gray-800 text-center mb-2">
+      {title}
+    </h3>
+    <p className="text-gray-600 text-center text-sm leading-relaxed">{desc}</p>
   </div>
 );
+
+const OfferingCards = () => {
+  return (
+    <section
+      className="py-16 px-4 bg-gray-50"
+      style={{
+        backgroundImage: "url('/icons/Homepagebg.png')",
+        backgroundRepeat: "no-repeat",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+      }}
+    >
+      <div className="max-w-7xl mx-auto">
+        {/* Heading */}
+        <h2 className="text-4xl font-bitter-medium text-gray-800 text-center mb-12">
+          Our <span className="text-blue-500">Cloud Cost Optimization</span>{" "}
+          Offerings
+        </h2>
+
+        {/* Solutions Section */}
+        <div className="flex items-center mb-12">
+          <div className="flex-shrink-0 mr-8 mt-6">
+            <span className="bg-pink-100 text-black  px-6 py-3 rounded-full text-lg shadow-sm">
+              Solutions
+            </span>
+          </div>
+          <div className="flex-grow grid grid-cols-1 md:grid-cols-2 gap-8">
+            {offerings.map((item, idx) => {
+              const iconPath =
+                item.title === "CloudKeeper AZ"
+                  ? "/icons/az.svg"
+                  : "/icons/edp.svg";
+              return (
+                <OfferingCard
+                  key={idx}
+                  icon={iconPath}
+                  title={item.title}
+                  desc={item.desc}
+                />
+              );
+            })}
+          </div>
+        </div>
+
+        {/* Platforms Section */}
+        <div className="flex items-center ">
+          <div className="flex-shrink-0 mr-8 mt-6">
+            <span className="bg-pink-100 text-black  px-6 py-3 rounded-full text-lg shadow-sm">
+              Platforms
+            </span>
+          </div>
+          <div className="flex-grow grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {offeringsTwo.map((item, idx) => {
+              let iconPath = "/icons/default.svg";
+              if (item.title === "CloudKeeper Auto")
+                iconPath = "/icons/auto.svg";
+              if (item.title === "CloudKeeper Lens")
+                iconPath = "/icons/lens.svg";
+              if (item.title === "CloudKeeper Tune")
+                iconPath = "/icons/tuner.svg";
+              return (
+                <OfferingCard
+                  key={idx}
+                  icon={iconPath}
+                  title={item.title}
+                  desc={item.desc}
+                />
+              );
+            })}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
 
 export default OfferingCards;

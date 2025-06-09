@@ -1,3 +1,7 @@
+// PartnerCards.jsx
+import React from "react";
+import Image from "next/image";
+
 const partners = [
   {
     logo: "/icons/google1.webp",
@@ -17,17 +21,17 @@ const partners = [
 ];
 
 const PartnerCards = () => (
-  <section className="bg-gray-50 py-12 px-4">
-    <div className=" text-center mb-8 text-xl font-black text-black">
+  <section className="bg-[#ffffff] py-12 px-4">
+    <div className=" text-center mb-8 text-xl sm:text-2xl md:text-3xl lg:text-4xl font-black text-black">
       Your <span className="text-[#4398d7]">One Stop Destination</span> for All
       Cloud Needs
     </div>
 
-    <div className="flex justify-between  gap-6">
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
       {partners.map((p, idx) => (
         <div
           key={idx}
-          className="bg-blue-900 rounded-lg shadow p-6 flex flex-col items-center text-center min-w-1/3 h-full md:w-1/3"
+          className="bg-blue-900 rounded-lg shadow p-6 flex flex-col items-center text-center"
         >
           <div className="flex items-center justify-center h-20 w-full bg-blue-900 rounded-md mb-4">
             <img

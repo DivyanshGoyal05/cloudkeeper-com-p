@@ -17,7 +17,7 @@ const logos = [
 
 const LogoCloud = () => (
   <section className="bg-[#f9f9f9] py-10 px-4 text-center">
-    <h2 className="text-gray-700 text-[30px] font-['Metropolis-Medium'] mb-2">
+    <h2 className="text-gray-700 text-[30px] font-['Metropolis-Medium'] mb-2 font-semibold">
       Trusted by 400+ Global Customers
     </h2>
 

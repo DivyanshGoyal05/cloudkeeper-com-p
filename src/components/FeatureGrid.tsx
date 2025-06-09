@@ -53,59 +53,63 @@ const features = [
       />
     ),
     title: "Cloud Cost Visibility Platform",
-    desc: `Granular insights with resource-level cloud cost visibility.\nCustom dashboards & cost anomaly detection.\nAlerts & notifications for informed decision-making.`,
+    desc: `Granular insights with resource-level cloud cost visibility.\nCustom dashboards & cost anomaly detection.\nAlerts & notifications for informed decision-decision.`,
   },
 ];
 
 const FeatureGrid = () => (
-  <section className="bg-sky-50 py-12 px-4">
-    <h2 className="text-center text-2xl font-bold mb-4 text-gray-800">
-      How do we <span className="text-sky-500">simplify</span> your entire cloud
-      cost optimization journey?
-    </h2>
-    <p className="text-center text-gray-500 mb-10 max-w-full mx-auto">
-      CloudKeeper combines the power of group buying & commitments management,
-      expert cloud consulting & support, and a complete visibility & analytics
-      platform to{" "}
-      <span className="text-sky-500">
-        reduce your cloud cost & maximize the value from AWS, Microsoft Azure, &
-        Google Cloud.
-      </span>
-    </p>
+  <section className="bg-sky-50 py-16 px-4 sm:px-6 lg:px-8">
+    <div className="w-full mx-auto">
+      <h2 className="text-center text-3xl sm:text-4xl lg:text-2xl font-bold mb-4 text-gray-800 leading-tight">
+        How do we <span className="text-[#4398d7]">simplify</span> your entire
+        cloud cost optimization journey?
+      </h2>
+      <p className="text-center text-gray-500 text-lg mb-12 max-w-3xl mx-auto leading-relaxed">
+        CloudKeeper combines the power of group buying & commitments management,
+        expert cloud consulting & support, and a complete visibility & analytics
+        platform to{" "}
+        <span className="text-[#4398d7] font-semibold">
+          reduce your cloud cost & maximize the value from AWS, Microsoft Azure,
+          & Google Cloud.
+        </span>
+      </p>
 
-    <div className="grid grid-cols-4 gap-8 max-w-5xl mx-auto  pt-8">
-      {features.map((f, idx) => {
-        const bgColor = bgColors[idx % bgColors.length]; // e.g. #f1fafe etc.
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 pt-8">
+        {features.map((f, idx) => {
+          const bgColor = bgColors[idx % bgColors.length]; // e.g. #f1fafe etc.
 
-        return (
-          <div
-            key={idx}
-            className="flex flex-col items-center text-left px-4 transition-all duration-300 rounded-md hover:shadow-lg group p-2"
-            style={{
-              backgroundColor: "transparent",
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.backgroundColor = bgColor;
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.backgroundColor = "transparent";
-            }}
-          >
+          return (
             <div
-              className="rounded-full w-16 h-16 flex items-center justify-center mb-4 transition-transform duration-300 group-hover:scale-120"
-              style={{ backgroundColor: bgColor }}
+              key={idx}
+              className="flex flex-col items-center text-center px-4 py-8 transition-all duration-300 rounded-md hover:shadow-lg group"
+              style={{
+                backgroundColor: "transparent",
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.backgroundColor = bgColor;
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.backgroundColor = "transparent";
+              }}
             >
-              <div className="text-gray-600 group-hover:text-black transition-colors duration-300">
-                {f.icon}
+              <div
+                className="rounded-full w-20 h-20 flex items-center justify-center mb-6 transition-transform duration-300 group-hover:scale-110"
+                style={{ backgroundColor: bgColor }}
+              >
+                <div className="text-gray-600 group-hover:text-black transition-colors duration-300">
+                  {f.icon}
+                </div>
               </div>
+              <h3 className="font-semibold text-xl mb-3 text-black">
+                {f.title}
+              </h3>
+              <p className="text-gray-500 text-base whitespace-pre-line leading-relaxed">
+                {f.desc}
+              </p>
             </div>
-            <h3 className="font-semibold text-lg mb-2 text-black">{f.title}</h3>
-            <p className="text-gray-500 text-sm whitespace-pre-line">
-              {f.desc}
-            </p>
-          </div>
-        );
-      })}
+          );
+        })}
+      </div>
     </div>
   </section>
 );

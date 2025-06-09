@@ -1,3 +1,4 @@
+// Footer.jsx
 import { useState } from "react";
 import Image from "next/image";
 
@@ -100,24 +101,24 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-white border-t border-gray-200 ">
-      <div className="flex-col  items-center justify-center mx-auto ">
-        <div className="max-w mx-auto">
-          <div className="grid grid-cols-6 gap-8 md:block ">
+    <footer className="bg-white  ">
+      <div className="flex flex-col items-center justify-center max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+        <div className="w-full">
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-x-8 gap-y-12">
             {footerData.map((footer) => (
               <div
                 key={footer.key}
-                className="md:border-b md:border-gray-100 md:last:border-none"
+                className="pb-1 md:pb-0  md:last:border-none"
               >
                 {/* Handle grouped sections */}
                 {footer.sections ? (
                   footer.sections.map((section) => (
                     <div key={section.key}>
                       <div
-                        className="cursor-pointer flex md:justify-between md:items-center md:py-4"
+                        className="cursor-pointer flex justify-between items-center py-2 md:py-4"
                         onClick={() => toggleSection(section.key)}
                       >
-                        <h4 className=" text-gray-800 font-metropolis-bold text-base tracking-wide mb-4 md:mb-0 font-bold">
+                        <h4 className="text-gray-800 font-metropolis-bold text-base mb-2 md:mb-0 font-bold">
                           {section.title}
                         </h4>
                       </div>
@@ -127,7 +128,7 @@ const Footer = () => {
                             <li key={index}>
                               <a
                                 href="#"
-                                className="font-metropolis-bold text-gray-800 text-base hover:text-pink-600 transition-colors py-[8px]"
+                                className="font-metropolis-bold text-gray-600 text-sm hover:text-pink-600 transition-colors py-1 block"
                               >
                                 {item}
                               </a>
@@ -140,10 +141,10 @@ const Footer = () => {
                 ) : (
                   <>
                     <div
-                      className="cursor-pointer flex md:justify-between md:items-center md:py-4"
+                      className="cursor-pointer flex justify-between items-center py-2 md:py-4"
                       onClick={() => toggleSection(footer.key)}
                     >
-                      <h4 className=" text-gray-800 font-metropolis-bold text-base tracking-wide mb-4 md:mb-0 font-bold container-width">
+                      <h4 className="text-gray-800 font-metropolis-bold text-base mb-2 md:mb-0 font-bold w-full">
                         {footer.title}
                       </h4>
                     </div>
@@ -153,7 +154,7 @@ const Footer = () => {
                           <li key={index}>
                             <a
                               href="#"
-                              className="font-metropolis-bold text-gray-800 text-base hover:text-pink-600 transition-colors py-[8px]"
+                              className="font-metropolis-bold text-gray-600 text-sm hover:text-pink-600 transition-colors py-1 block"
                             >
                               {item}
                             </a>
@@ -169,51 +170,49 @@ const Footer = () => {
         </div>
 
         <div
-          className="p-6 bg-cover bg-center rounded"
+          className="w-full mt-12 p-8 bg-cover bg-center rounded-lg flex flex-col md:flex-row items-center justify-between gap-8"
           style={{
             backgroundImage: "url('/icons/top-banner-exit-popup.png')",
           }}
         >
-          <div className="flex justify-around items-center gap-8 ">
-            <div className="flex-row items-center justify-center">
-              <p className="text-3xl font-extrabold text-[#2f3b4c] text-left">
-                Be the first to know the latest FinOps insights and news!
-              </p>
-            </div>
+          <div className="flex-1 text-center md:text-left">
+            <p className="text-2xl font-bold text-[#2f3b4c]">
+              Be the first to know the latest FinOps insights and news!
+            </p>
+          </div>
 
-            {/* Form Section */}
-            <div className="md:w-1/2">
-              <form className="flex flex-row md:flex-row items-start md:items-center gap-2">
-                <div className="w-full md:w-2/3">
-                  <input
-                    type="email"
-                    required
-                    placeholder="Email ID*"
-                    className="w-full px-4 py-2 border border-gray-300 rounded text-gray-800 bg-white focus:outline-none"
-                  />
-                </div>
+          {/* Form Section */}
+          <div className="w-full md:w-1/2">
+            <form className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
+              <div className="flex-1">
+                <input
+                  type="email"
+                  required
+                  placeholder="Email ID*"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-md text-gray-800 bg-white"
+                />
+              </div>
 
-                <button
-                  type="submit"
-                  className="px-1 py-2 bg-[#4398d7] text-white rounded font-semibold hover:bg-[#2c6a9d] transition-colors w-1/2 md:w-auto"
-                >
-                  Subscribe Now
-                </button>
-              </form>
-            </div>
+              <button
+                type="submit"
+                className="px-6 py-3 bg-[#4398d7] text-white rounded-md font-semibold hover:bg-[#2c6a9d] transition-colors w-full sm:w-auto"
+              >
+                Subscribe Now
+              </button>
+            </form>
           </div>
         </div>
       </div>
 
       {/* DO NOT CHANGE: Bottom section untouched */}
       <div className="bg-gray-50 py-6 mt-8">
-        <div className="  flex items-center justify-around gap-4 px-2">
-          <div className="  gap-2  flex justify-around items-center">
+        <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6 px-4">
+          <div className="flex flex-col sm:flex-row items-center gap-4">
             <div>
-              <h4 className="font-bold text-black ">Follow Us</h4>
+              <h4 className="font-bold text-gray-800">Follow Us</h4>
             </div>
 
-            <div className="flex gap-3 justify-center items-center ">
+            <div className="flex gap-3 justify-center items-center">
               <a href="#" className="hover:opacity-80">
                 <Image
                   src="/icons/in.svg"
@@ -249,22 +248,16 @@ const Footer = () => {
             </div>
           </div>
 
-          <div className="flex gap-8 justify-center items-center py-6">
-            <div className="text-black">
-              {" "}
-              <a href="#" className="hover:text-blue-600">
-                Privacy Policy
-              </a>
-            </div>
-
-            <div className="text-black">
-              {" "}
-              <a href="#" className="hover:text-blue-600">
-                Responsible Disclosure{" "}
-              </a>
-            </div>
+          <div className="flex flex-col sm:flex-row gap-4 py-2 text-gray-600">
+            {" "}
+            <a href="#" className="hover:text-blue-600">
+              Privacy Policy
+            </a>
+            <a href="#" className="hover:text-blue-600">
+              Responsible Disclosure{" "}
+            </a>
           </div>
-          <div className="flex flex-col gap-1 text-black border-gray-900">
+          <div className="flex flex-col gap-1 text-gray-600">
             <div>
               <Image
                 src="/icons/Cloudkeeper_New.svg"
