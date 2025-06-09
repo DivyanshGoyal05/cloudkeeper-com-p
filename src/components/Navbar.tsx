@@ -1,4 +1,3 @@
-// Navbar.jsx
 import React, { useState, useRef, useEffect } from "react";
 import CompanyDropdown from "./Dropdown/CompanyDropdown";
 import MobileMenu from "./MobileMenu";
@@ -21,16 +20,13 @@ const navLinks = [
   { label: "Success Stories", href: "#", hasDropdown: false },
   { label: "Pricing", href: "#", hasDropdown: false },
   { label: "Company", href: "#", hasDropdown: true },
-  // Added "Contact Us" as a navigation link with a special property for CTA styling
-  { label: "Contact Us", href: "/contact-us", hasDropdown: false, isCta: true },
+  {},
 ];
 
 const Navbar = ({
   setSearchOpen,
-  searchOpen,
 }: {
   setSearchOpen: (open: boolean) => void;
-  searchOpen: boolean;
 }) => {
   const [openDropdown, setOpenDropdown] = useState<string | false>(false);
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -50,22 +46,22 @@ const Navbar = ({
   }, [menuRef]);
 
   return (
-    <nav className="w-full bg-white shadow-md py-4 px-6 md:px-10 flex items-center justify-between relative z-50 border-b border-gray-100">
+    <nav className="w-full bg-white shadow-sm py-3 px-6 flex items-center justify-between relative z-40">
       {/* Logo */}
-      <div className="flex items-center" id="cloudkeeper-logo-container">
+      <div className="flex items-center gap-4" id="cloudkeeper-logo-container">
         <Image
           src={"/icons/Cloudkeeper_New.svg"}
           width={198}
-          height={36}
+          height={43}
           alt="CloudKeeper Logo"
         />
       </div>
 
-      {/* Desktop Nav (hidden on small/medium screens, flex on large screens) */}
-      <div className="hidden lg:flex flex-grow justify-end items-center">
+      {/* Desktop Nav */}
+      <div className="sm:flex justify-center px-6">
         <ul
           ref={menuRef}
-          className="flex space-x-6 xl:space-x-8 text-gray-700 font-metropolis-medium items-center"
+          className="flex gap-6 text-gray-700 font-medium items-center"
         >
           {navLinks.map((link) => (
             <li
@@ -76,84 +72,81 @@ const Navbar = ({
               }
               onMouseLeave={() => link.hasDropdown && setOpenDropdown(false)}
             >
-              {!link.isCta ? (
-                <button
-                  className={`flex items-center gap-1 px-2 py-1 rounded transition-colors duration-200
-                    ${
-                      openDropdown === link.label
-                        ? "text-pink-600"
-                        : "text-gray-700 hover:text-pink-600"
-                    }
-                    font-metropolis-medium text-base
-                  `}
-                  aria-haspopup={link.hasDropdown}
-                  aria-expanded={openDropdown === link.label}
-                  onClick={() =>
-                    link.hasDropdown
-                      ? setOpenDropdown((prev) =>
-                          prev === link.label ? false : link.label
-                        )
-                      : undefined
-                  }
-                >
-                  {link.label}
+              <button
+                className={`flex items-center gap-1 px-2 py-1 rounded transition font-mp ${
+                  openDropdown === link.label
+                    ? "text-pink-600"
+                    : "text-gray-700"
+                } hover:text-pink-600 focus:outline-none focus:ring-2 focus:ring-pink-200`}
+                aria-haspopup="true"
+                aria-expanded={openDropdown === link.label}
+                onClick={() =>
+                  link.hasDropdown
+                    ? setOpenDropdown((prev) =>
+                        prev === link.label ? false : link.label
+                      )
+                    : undefined
+                }
+              >
+                {link.label}
 
-                  {link.hasDropdown && (
-                    <svg
-                      className={`w-4 h-4 transition-transform duration-200 ${
-                        openDropdown === link.label ? "rotate-180" : ""
-                      }`}
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M19 9l-7 7-7-7"
-                      />
-                    </svg>
-                  )}
-                </button>
-              ) : (
-                <a
-                  href={link.href}
-                  className="ml-4 px-6 py-2 rounded-md bg-[#4398d7] text-white font-metropolis-medium text-base hover:bg-[#2c6a9d] transition-colors duration-200"
-                >
-                  {link.label}
-                </a>
-              )}
+                {link.hasDropdown && (
+                  <svg
+                    className={`w-4 h-4 transition-transform ${
+                      openDropdown === link.label ? "rotate-180" : ""
+                    }`}
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M19 9l-7 7-7-7"
+                    />
+                  </svg>
+                )}
+              </button>
             </li>
           ))}
         </ul>
 
-        {/* Desktop Search Button */}
-        <button
-          className="ml-6 w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-200"
-          aria-label="Search"
-          onClick={() => setSearchOpen(!searchOpen)}
-          // onClick={() => handleSerch}
-        >
-          <svg
-            className="w-5 h-5 text-gray-500"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            viewBox="0 0 24 24"
+        {/* Desktop Actions */}
+        <div className="flex-row flex gap-2 items-center ml-6">
+          <div className=" sm:flex gap-2 items-center ml-6">
+            <a
+              href="#"
+              className="px-4 py-2 rounded bg-[#4398d7] text-white font-semibold hover:bg-blue-800 transition"
+            >
+              Contact Us
+            </a>
+          </div>
+          <button
+            className="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-200"
+            aria-label="Search"
+            onClick={() => setSearchOpen(true)}
           >
-            <circle cx="11" cy="11" r="8" />
-            <line x1="21" y1="21" x2="16.65" y2="16.65" />
-          </svg>
-        </button>
+            <svg
+              className="w-5 h-5 text-gray-500"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              viewBox="0 0 24 24"
+            >
+              <circle cx="11" cy="11" r="8" />
+              <line x1="21" y1="21" x2="16.65" y2="16.65" />
+            </svg>
+          </button>
+        </div>
       </div>
 
-      {/* Mobile Actions (Visible on sm and md screens, hidden on large screens) */}
-      <div className="flex items-center lg:hidden gap-2">
+      {/* Mobile Actions */}
+      <div className="sm:flex items-center gap-2 sm:hidden">
         <button
           className="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-200"
           aria-label="Search"
-          onClick={() => setSearchOpen(!searchOpen)}
+          onClick={() => setSearchOpen(true)}
         >
           <svg
             className="w-5 h-5 text-gray-500"
@@ -190,18 +183,23 @@ const Navbar = ({
       {/* Mobile Menu */}
       <MobileMenu open={mobileOpen} onClose={() => setMobileOpen(false)} />
 
-      {/* Wrapped Dropdowns for hover stability (conditionally rendered) */}
-      {openDropdown === "Company" && <CompanyDropdown section="Company" />}
-      {openDropdown === "Solutions" && (
-        <SolutionsDropdown section="Solutions" />
-      )}
-      {openDropdown === "Platforms" && (
-        <PlatformsDropdown section="Platforms" />
-      )}
-      {openDropdown === "Capabilities" && (
-        <CapabilitiesDropdown section="CONSULT" />
-      )}
-      {openDropdown === "Insights" && <InsightsDropdown section="Insights" />}
+      {/* Wrapped Dropdowns for hover stability */}
+      <div
+        onMouseEnter={() => setOpenDropdown(openDropdown)}
+        onMouseLeave={() => setOpenDropdown(false)}
+      >
+        {openDropdown === "Company" && <CompanyDropdown section="Company" />}
+        {openDropdown === "Solutions" && (
+          <SolutionsDropdown section="Solutions" />
+        )}
+        {openDropdown === "Platforms" && (
+          <PlatformsDropdown section="Platforms" />
+        )}
+        {openDropdown === "Capabilities" && (
+          <CapabilitiesDropdown section="CONSULT" />
+        )}
+        {openDropdown === "Insights" && <InsightsDropdown section="Insights" />}
+      </div>
     </nav>
   );
 };

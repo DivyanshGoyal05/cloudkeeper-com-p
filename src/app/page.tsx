@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState } from "react";
 import AnnouncementBar from "@/components/AnnouncementBar";
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
@@ -10,32 +10,28 @@ import OfferingCards from "@/components/OfferingCards";
 import ConsultGrid from "@/components/ConsultGrid";
 import StatsGrid from "@/components/StatsGrid";
 import PartnerCards from "@/components/PartnerCards";
-import ClientTestimonials from "@/components/Testimonial";
+import Testimonial from "@/components/Testimonial";
 import BlogCards from "@/components/BlogCards";
 import ContactBanner from "@/components/ContactBanner";
 import Footer from "@/components/Footer";
-import IndustryRecognitions from "@/components/IndustryRecognitions";
 
-function SearchInput({ onClose }) {
-  const boxRef = useRef(null);
-
-  useEffect(() => {
-    const handleClick = (e) => {
-      if (boxRef.current && !boxRef.current.contains(e.target)) {
+function SearchInput({ onClose }: { onClose: () => void }) {
+  // Close on outside click
+  React.useEffect(() => {
+    const handleClick = (e: MouseEvent) => {
+      const input = document.getElementById("search-input-box");
+      if (input && !input.contains(e.target as Node)) {
         onClose();
       }
     };
-
     document.addEventListener("mousedown", handleClick);
-    return () => {
-      document.removeEventListener("mousedown", handleClick);
-    };
+    return () => document.removeEventListener("mousedown", handleClick);
   }, [onClose]);
 
   return (
     <div className="flex justify-center w-full mt-8 mb-8">
       <div
-        ref={boxRef}
+        id="search-input-box"
         className="w-[600px] bg-white rounded-2xl shadow p-4 flex items-center relative"
       >
         <input
@@ -55,21 +51,15 @@ function SearchInput({ onClose }) {
   );
 }
 
-export default SearchInput;
-
 export default function Home() {
   const [searchOpen, setSearchOpen] = useState(false);
 
-  const handleSearchClose = () => {
-    setSearchOpen(!searchOpen);
-    // setSearchOpen(!searchOpen);
-  };
   // Pass setSearchOpen to Navbar so it can open the search
   return (
     <div className="bg-gray-50 min-h-screen">
       <AnnouncementBar />
-      <Navbar searchOpen={searchOpen} setSearchOpen={setSearchOpen} />
-      {searchOpen && <SearchInput onClose={handleSearchClose} />}
+      <Navbar setSearchOpen={setSearchOpen} />
+      {searchOpen && <SearchInput onClose={() => setSearchOpen(false)} />}
       <div className="relative">
         {searchOpen && (
           <div className="absolute inset-0 bg-black/20 transition-all duration-300 z-10 pointer-events-none" />
@@ -98,15 +88,7 @@ export default function Home() {
               </div>
             </div>
 
-            <div
-              className="bg-white z-10"
-              style={{
-                backgroundImage: "url('/icons/Homepagebg.png')",
-                backgroundRepeat: "no-repeat",
-                backgroundSize: "cover",
-                backgroundPosition: "center",
-              }}
-            >
+            <div className="bg-white">
               <div className="max-w-[1200px] mx-auto px-4 py-16">
                 <OfferingCards />
               </div>
@@ -134,13 +116,7 @@ export default function Home() {
 
             <div className="bg-white">
               <div className="max-w-[1200px] mx-auto px-4 py-16">
-                <ClientTestimonials />
-              </div>
-            </div>
-
-            <div className="bg-[#f1fafe]">
-              <div className="max-w-[1200px] mx-auto px-4 py-16">
-                <IndustryRecognitions />
+                <Testimonial />
               </div>
             </div>
 
@@ -164,6 +140,8 @@ export default function Home() {
                 <Footer />
               </div>
             </div>
+
+            <Footer />
           </div>
         </div>
       </div>
