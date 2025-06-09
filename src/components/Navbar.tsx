@@ -46,7 +46,10 @@ const Navbar = ({
   }, [menuRef]);
 
   return (
-    <nav className="w-full bg-white shadow-sm py-3 px-6 flex items-center justify-between relative z-40">
+    <nav
+      className="w-full bg-white   flex items-center justify-between relative z-40 p-4 
+    "
+    >
       {/* Logo */}
       <div className="flex items-center gap-4" id="cloudkeeper-logo-container">
         <Image

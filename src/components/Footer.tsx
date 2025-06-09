@@ -1,6 +1,5 @@
 // Footer.jsx
 import { useState } from "react";
-import Image from "next/image";
 
 const Footer = () => {
   const [openSections, setOpenSections] = useState({});
@@ -101,16 +100,12 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-white  ">
+    <footer className="bg-white">
       <div className="flex flex-col items-center justify-center max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
         <div className="w-full">
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-x-8 gap-y-12">
             {footerData.map((footer) => (
-              <div
-                key={footer.key}
-                className="pb-1 md:pb-0  md:last:border-none"
-              >
-                {/* Handle grouped sections */}
+              <div key={footer.key} className="pb-1 md:pb-0">
                 {footer.sections ? (
                   footer.sections.map((section) => (
                     <div key={section.key}>
@@ -122,7 +117,7 @@ const Footer = () => {
                           {section.title}
                         </h4>
                       </div>
-                      <div className="block md:block md:pb-4">
+                      <div className="block md:pb-4">
                         <ul className="space-y-2">
                           {section.items.map((item, index) => (
                             <li key={index}>
@@ -148,7 +143,7 @@ const Footer = () => {
                         {footer.title}
                       </h4>
                     </div>
-                    <div className="block md:block md:pb-4">
+                    <div className="block md:pb-4">
                       <ul className="space-y-2">
                         {footer.items.map((item, index) => (
                           <li key={index}>
@@ -181,7 +176,6 @@ const Footer = () => {
             </p>
           </div>
 
-          {/* Form Section */}
           <div className="w-full md:w-1/2">
             <form className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
               <div className="flex-1">
@@ -189,84 +183,16 @@ const Footer = () => {
                   type="email"
                   required
                   placeholder="Email ID*"
-                  className="w-full px-4 py-3 border border-gray-300 rounded-md text-gray-800 bg-white"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-md text-gray-800 bg-white focus:outline-none"
                 />
               </div>
-
               <button
                 type="submit"
-                className="px-6 py-3 bg-[#4398d7] text-white rounded-md font-semibold hover:bg-[#2c6a9d] transition-colors w-full sm:w-auto"
+                className="px-6 py-3 bg-[#4398d7] text-white rounded-md font-semibold hover:bg-[#2c6a9d] transition-colors w-full sm:w-auto focus:outline-none"
               >
                 Subscribe Now
               </button>
             </form>
-          </div>
-        </div>
-      </div>
-
-      {/* DO NOT CHANGE: Bottom section untouched */}
-      <div className="bg-gray-50 py-6 mt-8">
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6 px-4">
-          <div className="flex flex-col sm:flex-row items-center gap-4">
-            <div>
-              <h4 className="font-bold text-gray-800">Follow Us</h4>
-            </div>
-
-            <div className="flex gap-3 justify-center items-center">
-              <a href="#" className="hover:opacity-80">
-                <Image
-                  src="/icons/in.svg"
-                  alt="LinkedIn"
-                  width={24}
-                  height={24}
-                />
-              </a>
-              <a href="#" className="hover:opacity-80">
-                <Image
-                  src="/icons/twitter_0.svg"
-                  alt="Twitter"
-                  width={24}
-                  height={24}
-                />
-              </a>
-              <a href="#" className="hover:opacity-80">
-                <Image
-                  src="/icons/youtube_0.svg"
-                  alt="YouTube"
-                  width={24}
-                  height={24}
-                />
-              </a>
-              <a href="#" className="hover:opacity-80">
-                <Image
-                  src="/icons/medium-logo-93CDCF6451-seeklogo.com 1.svg"
-                  alt="Medium"
-                  width={24}
-                  height={24}
-                />
-              </a>
-            </div>
-          </div>
-
-          <div className="flex flex-col sm:flex-row gap-4 py-2 text-gray-600">
-            {" "}
-            <a href="#" className="hover:text-blue-600">
-              Privacy Policy
-            </a>
-            <a href="#" className="hover:text-blue-600">
-              Responsible Disclosure{" "}
-            </a>
-          </div>
-          <div className="flex flex-col gap-1 text-gray-600">
-            <div>
-              <Image
-                src="/icons/Cloudkeeper_New.svg"
-                alt="CloudKeeper Logo"
-                width={150}
-                height={40}
-              />
-            </div>
-            <div>Copyright ©2025</div>
           </div>
         </div>
       </div>

@@ -10,10 +10,11 @@ import OfferingCards from "@/components/OfferingCards";
 import ConsultGrid from "@/components/ConsultGrid";
 import StatsGrid from "@/components/StatsGrid";
 import PartnerCards from "@/components/PartnerCards";
-import Testimonial from "@/components/Testimonial";
+import ClientTestimonials from "@/components/Testimonial";
 import BlogCards from "@/components/BlogCards";
 import ContactBanner from "@/components/ContactBanner";
 import Footer from "@/components/Footer";
+import FooterBottom from "@/components/FooterBottom";
 
 function SearchInput({ onClose }: { onClose: () => void }) {
   // Close on outside click
@@ -29,10 +30,10 @@ function SearchInput({ onClose }: { onClose: () => void }) {
   }, [onClose]);
 
   return (
-    <div className="flex justify-center w-full mt-8 mb-8">
+    <div className="flex justify-center w-full mt-8 mb-8 ">
       <div
         id="search-input-box"
-        className="w-[600px] bg-white rounded-2xl shadow p-4 flex items-center relative"
+        className="w-[600px] bg-white rounded-2xl shadow p-4 flex items-center relative "
       >
         <input
           type="text"
@@ -56,9 +57,13 @@ export default function Home() {
 
   // Pass setSearchOpen to Navbar so it can open the search
   return (
-    <div className="bg-gray-50 min-h-screen">
+    <div className="bg-[#ffffff] min-h-screen">
       <AnnouncementBar />
-      <Navbar setSearchOpen={setSearchOpen} />
+      {/* <Navbar setSearchOpen={setSearchOpen} /> */}
+      <div className="max-w-[1400px] mx-auto  bg-[#ffffff] border-b-0.5 ">
+        <Navbar setSearchOpen={setSearchOpen} />
+      </div>
+
       {searchOpen && <SearchInput onClose={() => setSearchOpen(false)} />}
       <div className="relative">
         {searchOpen && (
@@ -71,57 +76,65 @@ export default function Home() {
         >
           <div>
             <div className="bg-white">
-              <div className="max-w-[1200px] mx-auto py-16">
+              <div className="max-w-[1400px] mx-auto py-16">
                 <HeroSection />
               </div>
             </div>
 
             <div className="bg-[#f9f9f9]">
-              <div className="max-w-[1200px] mx-auto px-4 py-16">
+              <div className="max-w-[1400px] mx-auto px-4 py-16">
                 <LogoCloud />
               </div>
             </div>
 
             <div className="bg-sky-50">
-              <div className="max-w-[1200px] mx-auto px-4 py-16">
+              <div className="max-w-[1400px] mx-auto px-4 py-16">
                 <FeatureGrid />
               </div>
             </div>
 
-            <div className="bg-white">
-              <div className="max-w-[1200px] mx-auto px-4 py-16">
+            <div
+              className="bg-white z-10"
+              style={{
+                backgroundImage: "url('/icons/Homepagebg.png')",
+                backgroundRepeat: "no-repeat",
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+              }}
+            >
+              <div className="max-w-[1400px] mx-auto px-4 py-16">
                 <OfferingCards />
               </div>
             </div>
 
             <div className="bg-[#f1fafe]">
-              <div className="max-w-[1200px] mx-auto px-4 py-16">
+              <div className="max-w-[1400px] mx-auto px-4 py-16">
                 <ConsultGrid />
               </div>
             </div>
 
             <div className="bg-white">
               <div>
-                <div className="max-w-[1200px] mx-auto px-4 py-16">
+                <div className="max-w-[1400px] mx-auto px-4 py-16">
                   <StatsGrid />
                 </div>
               </div>
             </div>
 
             <div className="bg-white">
-              <div className="max-w-[1200px] mx-auto px-4 py-16">
+              <div className="max-w-[1400px] mx-auto px-4 py-16">
                 <PartnerCards />
               </div>
             </div>
 
             <div className="bg-white">
-              <div className="max-w-[1200px] mx-auto px-4 py-16">
-                <Testimonial />
+              <div className="max-w-[1400px] mx-auto px-4 py-16">
+                <ClientTestimonials />
               </div>
             </div>
 
             <div className="bg-white">
-              <div className="max-w-[1200px] mx-auto px-4 py-16">
+              <div className="max-w-[1400px] mx-auto px-4 py-16">
                 <BlogCards />
               </div>
             </div>
@@ -130,18 +143,22 @@ export default function Home() {
               className="bg-[#2b3c66] bg-cover bg-no-repeat bg-center"
               style={{ backgroundImage: "url('/icons/section-bg.webp')" }}
             >
-              <div className="max-w-[1200px] mx-auto px-4 py-16">
+              <div className="max-w-[1400px] mx-auto px-4 py-16">
                 <ContactBanner />
               </div>
             </div>
 
-            <div className="bg-white border-t border-gray-200">
-              <div className="max-w-[1200px] mx-auto px-4 py-16">
+            <div className="bg-[#ffffff] border-t border-gray-200">
+              <div className="max-w-[1400px] mx-auto px-4 py-16">
                 <Footer />
               </div>
             </div>
 
-            <Footer />
+            <div className="bg-[#f9fafb] border-t border-gray-200">
+              <div className="max-w-[1400px] mx-auto px-4 py-16">
+                <FooterBottom />
+              </div>
+            </div>
           </div>
         </div>
       </div>
