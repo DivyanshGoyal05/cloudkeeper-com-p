@@ -1,6 +1,6 @@
 @import "tailwindcss";
 
-@tailwind base;
+/* @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
@@ -18,6 +18,13 @@
         url('/fonts/transfonter.org-20250522-102913/Metropolis-SemiBold.woff') format('woff');
     font-weight: 600;
     font-style: normal;
+} */
+
+@font-face {
+    font-family: 'bitter';
+    src: url('../../public/fonts/Bitter/Bitter-VariableFont_wght.ttf');
+    font-weight: 600;
+    font-style: normal;
 }
 
 /* Rest of your global styles */
@@ -26,4 +33,8 @@
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+}
+
+.font-bitter {
+    font-family: "Bitter", serif;
 }

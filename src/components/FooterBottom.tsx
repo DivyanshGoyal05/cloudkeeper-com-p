@@ -3,11 +3,11 @@ import Image from "next/image";
 
 const FooterBottom = () => {
   return (
-    <div className="bg-gray-50 py-6">
+    <div className="bg-gray-50 py-2">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6 px-4">
         <div className="flex flex-col sm:flex-row items-center gap-4">
           <div>
-            <h4 className="font-bold text-gray-800">Follow Us</h4>
+            <h4 className="font-bold text-gray-800 text-xl">Follow Us</h4>
           </div>
 
           <div className="flex gap-3 justify-center items-center">

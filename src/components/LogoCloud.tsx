@@ -1,18 +1,33 @@
 import React from "react";
 
+// const logos = [
+//   { src: "/icons/Group 17819.svg", alt: "Group 17819" },
+//   { src: "/icons/hypercare.svg", alt: "Hypercare" },
+//   { src: "/icons/idc.svg", alt: "IDC" },
+//   { src: "/icons/Money-smart.svg", alt: "Money Smart" },
+//   { src: "/icons/radix.svg", alt: "Radix" },
+//   { src: "/icons/sign.svg", alt: "Sign" },
+//   { src: "/icons/upgrad.svg", alt: "UpGrad" },
+//   { src: "/icons/wishpond.svg", alt: "Wishpond" },
+//   { src: "/icons/zepto.svg", alt: "Zepto" },
+//   { src: "/icons/upgrad.svg", alt: "UpGrad" },
+//   { src: "/icons/wishpond.svg", alt: "Wishpond" },
+//   { src: "/icons/zepto.svg", alt: "Zepto" },
+// ];
+
 const logos = [
-  { src: "/icons/Group 17819.svg", alt: "Group 17819" },
+  { src: "/icons/elocal.svg", alt: "eLocal" },
+  { src: "/icons/Airmeet.svg", alt: "Airmeet" },
+  { src: "/icons/wishpond.svg", alt: "Wishpond" },
   { src: "/icons/hypercare.svg", alt: "Hypercare" },
-  { src: "/icons/idc.svg", alt: "IDC" },
+  { src: "/icons/zepto.svg", alt: "Zepto" },
+  { src: "/icons/Countrydelight.png", alt: "Country Delight" },
+  { src: "/icons/Group 17819.svg", alt: "Qoria" },
+  { src: "/icons/cse.svg", alt: "CSE Insurance Group" },
   { src: "/icons/Money-smart.svg", alt: "Money Smart" },
+  { src: "/icons/download 1.png", alt: "Connect & Heal" },
   { src: "/icons/radix.svg", alt: "Radix" },
   { src: "/icons/sign.svg", alt: "Sign" },
-  { src: "/icons/upgrad.svg", alt: "UpGrad" },
-  { src: "/icons/wishpond.svg", alt: "Wishpond" },
-  { src: "/icons/zepto.svg", alt: "Zepto" },
-  { src: "/icons/upgrad.svg", alt: "UpGrad" },
-  { src: "/icons/wishpond.svg", alt: "Wishpond" },
-  { src: "/icons/zepto.svg", alt: "Zepto" },
 ];
 
 const LogoCloud = () => (
@@ -26,7 +41,7 @@ const LogoCloud = () => (
       spend through CloudKeeper
     </p>
 
-    <div className="grid grid-cols-6 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-6 max-w-6xl mx-auto bg-[#f9f9f9]">
+    <div className="grid grid-cols-2 mx-auto sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-6 max-w-6xl mx-auto bg-[#f9f9f9]">
       {logos.map((logo, idx) => (
         <div
           key={idx}

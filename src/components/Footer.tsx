@@ -101,9 +101,9 @@ const Footer = () => {
 
   return (
     <footer className="bg-white">
-      <div className="flex flex-col items-center justify-center max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+      <div className="flex flex-col items-center justify-center max-w-7xl mx-auto py-8 px-4 sm:px-6 lg:px-8">
         <div className="w-full">
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-x-8 gap-y-12">
+          <div className=" grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-x-8 gap-y-12">
             {footerData.map((footer) => (
               <div key={footer.key} className="pb-1 md:pb-0">
                 {footer.sections ? (
@@ -118,7 +118,7 @@ const Footer = () => {
                         </h4>
                       </div>
                       <div className="block md:pb-4">
-                        <ul className="space-y-2">
+                        <ul className=" font-semibold space-y-2">
                           {section.items.map((item, index) => (
                             <li key={index}>
                               <a
@@ -149,7 +149,7 @@ const Footer = () => {
                           <li key={index}>
                             <a
                               href="#"
-                              className="font-metropolis-bold text-gray-600 text-sm hover:text-pink-600 transition-colors py-1 block"
+                              className="font-bold text-gray-600 text-sm hover:text-pink-600 transition-colors py-1 block"
                             >
                               {item}
                             </a>
@@ -165,7 +165,7 @@ const Footer = () => {
         </div>
 
         <div
-          className="w-full mt-12 p-8 bg-cover bg-center rounded-lg flex flex-col md:flex-row items-center justify-between gap-8"
+          className="w-full mt-12 p-8 bg-cover bg-center rounded flex flex-col md:flex-row items-center justify-between gap-8"
           style={{
             backgroundImage: "url('/icons/top-banner-exit-popup.png')",
           }}
@@ -188,7 +188,7 @@ const Footer = () => {
               </div>
               <button
                 type="submit"
-                className="px-6 py-3 bg-[#4398d7] text-white rounded-md font-semibold hover:bg-[#2c6a9d] transition-colors w-full sm:w-auto focus:outline-none"
+                className="px-12 py-3 bg-[#4398d7] text-white rounded-md font-semibold hover:bg-[#2c6a9d] transition-colors w-full sm:w-auto focus:outline-none"
               >
                 Subscribe Now
               </button>

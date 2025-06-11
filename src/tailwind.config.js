@@ -1,6 +1,8 @@
 // tailwind.config.js
+// import fontFamily from "tailwindcss/defaultTheme";
+
 module.exports = {
-    content: ['*'], // Ideally should be more specific like './src/**/*.{js,ts,jsx,tsx}'
+    content: ['*'],
     theme: {
         extend: {
             fontFamily: {

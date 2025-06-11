@@ -20,7 +20,6 @@ const navLinks = [
   { label: "Success Stories", href: "#", hasDropdown: false },
   { label: "Pricing", href: "#", hasDropdown: false },
   { label: "Company", href: "#", hasDropdown: true },
-  {},
 ];
 
 const Navbar = ({
@@ -46,12 +45,12 @@ const Navbar = ({
   }, [menuRef]);
 
   return (
-    <nav
-      className="w-full bg-white   flex items-center justify-between relative z-40 p-4 
-    "
-    >
-      {/* Logo */}
-      <div className="flex items-center gap-4" id="cloudkeeper-logo-container">
+    <nav className="flex-wrap sm:w-full bg-white flex items-center justify-between relative z-40 p-4 ">
+      {/* === Logo Section Start === */}
+      <div
+        className="sm:flex items-center gap-4"
+        id="cloudkeeper-logo-container"
+      >
         <Image
           src={"/icons/Cloudkeeper_New.svg"}
           width={198}
@@ -59,12 +58,14 @@ const Navbar = ({
           alt="CloudKeeper Logo"
         />
       </div>
+      {/* === Logo Section End === */}
 
-      {/* Desktop Nav */}
-      <div className="sm:flex justify-center px-6">
+      {/* === Desktop Navigation Start === */}
+      <div className="hidden sm:flex flex-grow items-center justify-end gap-8">
+        {/* === Nav Links Start === */}
         <ul
           ref={menuRef}
-          className="flex gap-6 text-gray-700 font-medium items-center"
+          className="sm:flex gap-6 text-gray-700 items-center text-[15px] font-metropolis-medium"
         >
           {navLinks.map((link) => (
             <li
@@ -92,7 +93,6 @@ const Navbar = ({
                 }
               >
                 {link.label}
-
                 {link.hasDropdown && (
                   <svg
                     className={`w-4 h-4 transition-transform ${
@@ -113,39 +113,37 @@ const Navbar = ({
               </button>
             </li>
           ))}
+          {/* Contact Us Button - Inside the nav list */}
+          <li>
+            <div className="hidden sm:flex justify-center gap-1 item-center px-[13px] py-[2px] rounded-sm text-[14px] h-[30px] w-[96px] text-center  bg-[#4398d7] text-white  hover:bg-[#2140ae] transition">
+              <div>Contact</div>
+              <div>Us</div>
+            </div>
+          </li>
         </ul>
 
-        {/* Desktop Actions */}
-        <div className="flex-row flex gap-2 items-center ml-6">
-          <div className=" sm:flex gap-2 items-center ml-6">
-            <a
-              href="#"
-              className="px-4 py-2 rounded bg-[#4398d7] text-white font-semibold hover:bg-blue-800 transition"
-            >
-              Contact Us
-            </a>
-          </div>
-          <button
-            className="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-200"
-            aria-label="Search"
-            onClick={() => setSearchOpen(true)}
+        {/* Search Button - Separate from nav links */}
+        <button
+          className="hidden sm:w-10 h-10 rounded-full bg-gray-100 flex flex-nowrap items-center justify-center hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-200"
+          aria-label="Search"
+          onClick={() => setSearchOpen(true)}
+        >
+          <svg
+            className="w-5 h-5 text-gray-500"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            viewBox="0 0 24 24"
           >
-            <svg
-              className="w-5 h-5 text-gray-500"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              viewBox="0 0 24 24"
-            >
-              <circle cx="11" cy="11" r="8" />
-              <line x1="21" y1="21" x2="16.65" y2="16.65" />
-            </svg>
-          </button>
-        </div>
+            <circle cx="11" cy="11" r="8" />
+            <line x1="21" y1="21" x2="16.65" y2="16.65" />
+          </svg>
+        </button>
       </div>
+      {/* === Desktop Navigation End === */}
 
-      {/* Mobile Actions */}
-      <div className="sm:flex items-center gap-2 sm:hidden">
+      {/* === Mobile Actions Start === */}
+      <div className="flex flex-nowrap sm:flex items-center gap-2 sm:hidden">
         <button
           className="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-200"
           aria-label="Search"
@@ -182,11 +180,13 @@ const Navbar = ({
           </svg>
         </button>
       </div>
+      {/* === Mobile Actions End === */}
 
-      {/* Mobile Menu */}
+      {/* === Mobile Menu Start === */}
       <MobileMenu open={mobileOpen} onClose={() => setMobileOpen(false)} />
+      {/* === Mobile Menu End === */}
 
-      {/* Wrapped Dropdowns for hover stability */}
+      {/* === Dropdown Menus Start === */}
       <div
         onMouseEnter={() => setOpenDropdown(openDropdown)}
         onMouseLeave={() => setOpenDropdown(false)}
@@ -203,6 +203,7 @@ const Navbar = ({
         )}
         {openDropdown === "Insights" && <InsightsDropdown section="Insights" />}
       </div>
+      {/* === Dropdown Menus End === */}
     </nav>
   );
 };

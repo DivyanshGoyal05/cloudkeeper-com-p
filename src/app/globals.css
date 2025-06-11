@@ -4,6 +4,8 @@
 @tailwind utilities;
 
 @import "../styles/styles.scss";
+@import url('https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,100..900;1,100..900&display=swap');
+
 
 .container-width {
   @apply max-w-4/6;
@@ -65,3 +67,7 @@ body {
   background-position: center;
   background-repeat: no-repeat;
 }
+
+/* .font-bitter {
+  font-family: "Bitter", serif;
+} */

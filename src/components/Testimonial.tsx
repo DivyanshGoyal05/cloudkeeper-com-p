@@ -11,21 +11,22 @@ const TestimonialCard = ({
   videoLink,
 }) => {
   return (
-    <div className="flex flex-col lg:flex-row items-end lg:items-start p-4 lg:p-0">
+    <div className="flex flex-col lg:flex-row items-end lg:items-start p-4 lg:p-0 h-[500px]">
       {/* Video Section */}
-      <div className="relative w-full lg:w-3/5 xl:w-2/3 bg-white rounded-2xl shadow-lg overflow-hidden group">
+      <div className="relative w-full lg:w-3/5 xl:w-2/3 bg-white rounded-2xl shadow-lg overflow-hidden group h-[500px] ">
         {/* Placeholder for video thumbnail and play button */}
         <img
           src={videoThumbnail}
           alt="Video Thumbnail"
-          className="w-full h-auto rounded-2xl transition-transform duration-300 group-hover:scale-105"
+          height="500"
+          className="w-full h-auto rounded-2xl transition-transform duration-300 group-hover:scale-105 h-[500px]"
         />
-        <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-25 group-hover:bg-opacity-40 transition-all duration-300">
+        <div className="">
           <a
             href={videoLink}
             target="_blank"
             rel="noopener noreferrer"
-            className="p-4 bg-white bg-opacity-90 rounded-full shadow-lg transition-transform duration-300 group-hover:scale-110"
+            className="p- bg-white bg-opacity-90 rounded-full shadow-lg transition-transform duration-300 group-hover:scale-110 h-[500px]"
           >
             {/* Play icon (replace with an SVG or icon library if needed) */}
             <svg
@@ -83,21 +84,21 @@ const TestimonialCard = ({
 };
 
 const ClientTestimonials = () => {
-  const [activeCategory, setActiveCategory] = useState("engineers"); // Default active category
+  const [activeCategory, setActiveCategory] = useState("engineers");
 
   const testimonials = {
     engineers: {
-      videoThumbnail: "/images/Group%2018551%20%282%29.png", // Replace with actual path
-      quote: "Absolutely no impact on our relationship with AWS",
-      companyLogo: "/images/upgrad.svg", // Replace with actual path
+      videoThumbnail: "public/icons/testione.png", //
+      quote: "",
+      companyLogo: "/images/upgrad.svg", //
       clientName: "Dipesh Garg",
       clientDesignation: "DevOps lead",
-      videoLink: "https://www.youtube.com/embed/gmlK3AF4_YI", // Replace with actual video link
+      videoLink: "https://www.youtube.com/embed/gmlK3AF4_YI",
     },
-    // Add more categories and their corresponding testimonials here
+
     technology_exec: {
       videoThumbnail: "path/to/tech_exec_video.png",
-      quote: "CloudKeeper has transformed our cloud spend.",
+      quote: " ",
       companyLogo: "path/to/another_logo.svg",
       clientName: "Jane Doe",
       clientDesignation: "CTO",
@@ -105,7 +106,7 @@ const ClientTestimonials = () => {
     },
     c_suite: {
       videoThumbnail: "path/to/c_suite_video.png",
-      quote: "Significant cost savings without operational compromise.",
+      quote: "",
       companyLogo: "path/to/yet_another_logo.svg",
       clientName: "John Smith",
       clientDesignation: "CFO",
@@ -119,7 +120,7 @@ const ClientTestimonials = () => {
     <section className="py-16 px-4 bg-white">
       <div className="max-w-7xl mx-auto">
         <h2 className="text-4xl font-bitter-medium text-gray-800 text-center mb-4">
-          What Our <span className="text-blue-500">Clients Say</span>
+          What Our <span className="text-[#4398d7]">Clients Say</span>
         </h2>
         <p className="text-gray-600 text-center text-lg mb-12">
           From DevOps engineers to CTOs, CFOs, and CEOs — CloudKeeper is loved
@@ -134,10 +135,10 @@ const ClientTestimonials = () => {
                 <li key={category} className="mb-4 lg:mb-8 last:mb-0">
                   <button
                     onClick={() => setActiveCategory(category)}
-                    className={`font-metropolis-bold text-lg md:text-xl uppercase px-4 py-2 transition-colors duration-300 ${
+                    className={`font-metropolis-bold w-full text-start text-lg md:text-xl uppercase font-semibold py-2 transition-colors duration-300 ${
                       activeCategory === category
-                        ? "text-blue-600 border-b-2 border-blue-600 lg:border-r-2 lg:border-b-0"
-                        : "text-gray-500 hover:text-blue-600"
+                        ? "text-[#4398d7] border-b-2 border-[#4398d7] lg:border-r-2 lg:border-b-0"
+                        : "text-gray-500 hover:text-[#4398d7]"
                     }`}
                   >
                     {category.replace("_", " ")}

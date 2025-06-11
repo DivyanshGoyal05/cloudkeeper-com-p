@@ -146,7 +146,7 @@ const capabilitiesSections: CapabilitySection[] = [
 
 const CapabilitiesDropdown: React.FC<CapabilitiesDropdownProps> = ({}) => {
   return (
-    <div className="absolute left-1/2 -translate-x-1/2 top-full mt-4 w-[1100px] bg-white rounded-2xl shadow-2xl p-8 z-50 animate-fade-in border border-gray-100">
+    <div className="absolute left-1/2 -translate-x-1/2 top-full mt-4 w-[1200px] bg-white rounded-2xl shadow-2xl p-8 z-50 animate-fade-in border border-gray-100">
       <div className="absolute -top-4 left-0 w-full h-4"></div>
 
       {/* Top row with first 4 sections */}
@@ -155,11 +155,11 @@ const CapabilitiesDropdown: React.FC<CapabilitiesDropdownProps> = ({}) => {
           <div key={sectionData.title} className="flex ">
             {/* Section header with icon and title */}
             <div className="flex gap-3 mb-4">
-              <span className="inline-flex items-center justify-center w-8 h-8">
+              <span className="inline-flex items-center justify-center w-12 h-12">
                 <Image
                   src={`/icons/${sectionData.icon}`}
-                  width={24}
-                  height={24}
+                  width={50}
+                  height={50}
                   alt={sectionData.title}
                   className="object-contain"
                 />
@@ -209,11 +209,11 @@ const CapabilitiesDropdown: React.FC<CapabilitiesDropdownProps> = ({}) => {
         <div className="flex flex-col">
           {/* PROGRAMS section header */}
           <div className="flex items-center gap-3 mb-4">
-            <span className="inline-flex items-center justify-center w-8 h-8">
+            <span className="inline-flex items-center justify-center w-12 h-12">
               <Image
                 src={`/icons/${capabilitiesSections[4].icon}`}
-                width={24}
-                height={24}
+                width={50}
+                height={50}
                 alt="PROGRAMS"
                 className="object-contain"
               />

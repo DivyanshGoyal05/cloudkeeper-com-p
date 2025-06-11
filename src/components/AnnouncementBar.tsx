@@ -7,7 +7,7 @@ const AnnouncementBar = () => (
       backgroundSize: "cover",
       backgroundPosition: "center",
     }}
-    className="w-full text-white text-sm flex items-center justify-between py-2 px-4 relative"
+    className="hidden md:flex w-full text-white text-sm items-center justify-between py-1 px-3 relative"
   >
     {/* Left mountain */}
     <div className="absolute top-0 left-0">
@@ -16,19 +16,19 @@ const AnnouncementBar = () => (
         width={78}
         height={34}
         alt="mountain image"
-        className="block ml-20"
+        className="block ml-13"
       />
     </div>
 
     {/* Center content - Logo, Text, and Button */}
-    <div className="flex items-center justify-center gap-4 flex-1">
+    <div className="flex items-center justify-center gap-5 flex-1 ">
       {/* Logo */}
       <div className="flex items-center">
         <Image src="/icons/logocfc.svg" width={54} height={40} alt="logocfc" />
       </div>
 
       {/* Text */}
-      <div className="flex items-center text-[20px] leading-[28px] font-['Metropolis-normal'] text-white">
+      <div className="flex items-center text-[20px] leading-[28px] font-['Metropolis-normal'] text-white p-1 ">
         30-Day Cloud Fitness Challenge.
         <span className="font-['Metropolis-SemiBold'] ml-1">
           Sign up & get a $50 Amazon voucher!
@@ -36,7 +36,7 @@ const AnnouncementBar = () => (
       </div>
 
       {/* Button */}
-      <button className="group border font-semibold border-white px-4 py-2 rounded-sm text-white transition-all duration-300 ease-in-out hover:bg-white flex items-center cursor-pointer">
+      <button className="group border font-semibold border-white px-4 py-1 rounded-sm text-white transition-all duration-300 ease-in-out hover:bg-white flex items-center cursor-pointer">
         <span className="group-hover:bg-gradient-to-r group-hover:from-blue-500 group-hover:via-purple-500 group-hover:to-pink-600 group-hover:bg-clip-text group-hover:text-transparent">
           Take the Assessment
         </span>
@@ -50,7 +50,7 @@ const AnnouncementBar = () => (
         width={76}
         height={36}
         alt="mountain image"
-        className="block mr-20"
+        className="block mr-16"
       />
     </div>
   </div>

@@ -1,191 +1,22 @@
-import Image from "next/image";
-
-const achievements = [
-  {
-    icon: (
-      <span className="inline-flex">
-        <Image
-          src="/icons/GPTWCertified.svg"
-          width={90}
-          height={90}
-          alt="GPTW Certified"
-          className="object-contain"
-        />
-      </span>
-    ),
-    title: "GPTW Certified",
-    desc: "Great Place to Work Certified",
-  },
-  {
-    icon: (
-      <span className="inline-flex">
-        <Image
-          src="/icons/2logo.png"
-          width={90}
-          height={90}
-          alt="Our Team"
-          className="object-contain"
-        />
-      </span>
-    ),
-    title: "Our Team",
-    desc: "Meet the visionary minds steering CloudKeeper's growth",
-  },
-  {
-    icon: (
-      <span className="inline-flex">
-        <Image
-          src="/icons/3logo.png"
-          width={90}
-          height={90}
-          alt="Innovation"
-          className="object-contain"
-        />
-      </span>
-    ),
-    title: "Innovation",
-    desc: "Pushing the boundaries of cloud solutions",
-  },
-  {
-    icon: (
-      <span className="inline-flex">
-        <Image
-          src="/icons/5logo.png"
-          width={90}
-          height={90}
-          alt="Awards"
-          className="object-contain"
-        />
-      </span>
-    ),
-    title: "Awards",
-    desc: "Recognized for excellence in cloud management",
-  },
-  {
-    icon: (
-      <span className="inline-flex">
-        <Image
-          src="/icons/6logo.png"
-          width={90}
-          height={90}
-          alt="Security"
-          className="object-contain"
-        />
-      </span>
-    ),
-    title: "Security",
-    desc: "Top-notch security for all our clients",
-  },
-  {
-    icon: (
-      <span className="inline-flex">
-        <Image
-          src="/icons/7logo.png"
-          width={90}
-          height={90}
-          alt="Support"
-          className="object-contain"
-        />
-      </span>
-    ),
-    title: "Support",
-    desc: "24/7 dedicated customer support",
-  },
-  {
-    icon: (
-      <span className="inline-flex">
-        <Image
-          src="/icons/8logo.png"
-          width={90}
-          height={90}
-          alt="Growth"
-          className="object-contain"
-        />
-      </span>
-    ),
-    title: "Growth",
-    desc: "Accelerating client success stories",
-  },
-  {
-    icon: (
-      <span className="inline-flex">
-        <Image
-          src="/icons/9logo.png"
-          width={90}
-          height={90}
-          alt="Optimization"
-          className="object-contain"
-        />
-      </span>
-    ),
-    title: "Optimization",
-    desc: "Maximizing cloud efficiency",
-  },
-  {
-    icon: (
-      <span className="inline-flex">
-        <Image
-          src="/icons/10logo.png"
-          width={90}
-          height={90}
-          alt="Analytics"
-          className="object-contain"
-        />
-      </span>
-    ),
-    title: "Analytics",
-    desc: "Data-driven decision making",
-  },
-  {
-    icon: (
-      <span className="inline-flex">
-        <Image
-          src="/icons/partnership.svg"
-          width={90}
-          height={90}
-          alt="Partnerships"
-          className="object-contain"
-        />
-      </span>
-    ),
-    title: "Partnerships",
-    desc: "Strong alliances with industry leaders",
-  },
-];
+import React from "react";
 
 const ContactBanner = () => (
-  <>
-    {/* Row for text + button */}
-    <div
-      className="flex justify-around items-center bg-[#2b3c66] h-45 p-4
-    "
-      style={{ backgroundImage: "url('/icons/section-bg.webp')" }}
-    >
-      <div className="text-2xl font-gray-900 max-w-xl font-bold">
-        Speak with our advisors to learn how you can take control of your Cloud
-        Cost
-      </div>
-
+  <div className="flex flex-col py-2 sm:flex-row max-w-[1400px] mx-auto px-4 py-8 items-center justify-between text-center sm:text-left">
+    <div className="text-[10px] sm:text-[30px] leading-[30px] sm:leading-[45px] font-metropolis font-bold text-white mb-6 sm:mb-0 sm:pr-12">
+      Speak with our advisors to learn how you can take control of your Cloud
+      Cost
+    </div>
+    <div className="flex justify-center sm:justify-start">
       <a
         href="#"
-        className="mt-4 sm:mt-0 px-8 py-3 bg-white text-[#86bce6] rounded font-semibold text-lg shadow hover:bg-blue-800 hover:text-white transition"
+        className="relative min-w-[180px] sm:min-w-[209px] w-[180px] sm:w-[209px] h-[48px] sm:h-[52px] flex items-center justify-center overflow-hidden border border-white bg-white text-[#4398D7] text-[16px] sm:text-[18px] leading-[24px] sm:leading-[28px] rounded-[6px] shadow-2xl transition-all duration-500 
+           before:absolute before:top-0 before:left-1/2 before:h-full before:w-0 before:bg-[#2b3c66] before:transition-all before:duration-500 before:transform before:-translate-x-1/2
+           hover:before:w-full hover:text-white"
       >
-        Contact us
+        <span className="relative z-10">Contact us</span>
       </a>
     </div>
-
-    {/* Flex row for achievements */}
-    <div
-      className="flex justify-center "
-      style={{ backgroundColor: "#f1fafe" }}
-    >
-      {achievements.map((item, index) => (
-        <div key={index} className="flex items-center  text-center p-2">
-          {item.icon}
-        </div>
-      ))}
-    </div>
-  </>
+  </div>
 );
 
 export default ContactBanner;

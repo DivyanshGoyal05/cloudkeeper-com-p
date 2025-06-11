@@ -15,6 +15,8 @@ import BlogCards from "@/components/BlogCards";
 import ContactBanner from "@/components/ContactBanner";
 import Footer from "@/components/Footer";
 import FooterBottom from "@/components/FooterBottom";
+import AchievementsRow from "@/components/AchievementsRow";
+// import Head from "next/head";
 
 function SearchInput({ onClose }: { onClose: () => void }) {
   // Close on outside click
@@ -57,111 +59,134 @@ export default function Home() {
 
   // Pass setSearchOpen to Navbar so it can open the search
   return (
-    <div className="bg-[#ffffff] min-h-screen">
-      <AnnouncementBar />
-      {/* <Navbar setSearchOpen={setSearchOpen} /> */}
-      <div className="max-w-[1400px] mx-auto  bg-[#ffffff] border-b-0.5 ">
-        <Navbar setSearchOpen={setSearchOpen} />
-      </div>
+    <>
+      {/* <Head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin=""
+        />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Bitter:wght@400;700&family=Roboto:wght@400;700&display=swap"
+          rel="stylesheet"
+        />
+      </Head> */}
+      <div className="bg-[#ffffff] min-h-screen">
+        <AnnouncementBar />
+        {/* <Navbar setSearchOpen={setSearchOpen} /> */}
+        <div className=" sm:max-w-[1360px] mx-auto  bg-[#aa8888] border-b-0.5 ">
+          <Navbar setSearchOpen={setSearchOpen} />
+        </div>
 
-      {searchOpen && <SearchInput onClose={() => setSearchOpen(false)} />}
-      <div className="relative">
-        {searchOpen && (
-          <div className="absolute inset-0 bg-black/20 transition-all duration-300 z-10 pointer-events-none" />
-        )}
-        <div
-          className={
-            searchOpen ? "filter blur-sm pointer-events-none select-none" : ""
-          }
-        >
-          <div>
-            <div className="bg-white">
-              <div className="max-w-[1400px] mx-auto py-16">
-                <HeroSection />
-              </div>
-            </div>
-
-            <div className="bg-[#f9f9f9]">
-              <div className="max-w-[1400px] mx-auto px-4 py-16">
-                <LogoCloud />
-              </div>
-            </div>
-
-            <div className="bg-sky-50">
-              <div className="max-w-[1400px] mx-auto px-4 py-16">
-                <FeatureGrid />
-              </div>
-            </div>
-
-            <div
-              className="bg-white z-10"
-              style={{
-                backgroundImage: "url('/icons/Homepagebg.png')",
-                backgroundRepeat: "no-repeat",
-                backgroundSize: "cover",
-                backgroundPosition: "center",
-              }}
-            >
-              <div className="max-w-[1400px] mx-auto px-4 py-16">
-                <OfferingCards />
-              </div>
-            </div>
-
-            <div className="bg-[#f1fafe]">
-              <div className="max-w-[1400px] mx-auto px-4 py-16">
-                <ConsultGrid />
-              </div>
-            </div>
-
-            <div className="bg-white">
-              <div>
-                <div className="max-w-[1400px] mx-auto px-4 py-16">
-                  <StatsGrid />
+        {searchOpen && <SearchInput onClose={() => setSearchOpen(false)} />}
+        <div className="relative">
+          {searchOpen && (
+            <div className="absolute inset-0 bg-black/20 transition-all duration-300 z-10 pointer-events-none" />
+          )}
+          <div
+            className={
+              searchOpen ? "filter blur-sm pointer-events-none select-none" : ""
+            }
+          >
+            <div>
+              <div className="bg-white">
+                <div className="max-w-[1360px] mx-auto py-16">
+                  <HeroSection />
                 </div>
               </div>
-            </div>
 
-            <div className="bg-white">
-              <div className="max-w-[1400px] mx-auto px-4 py-16">
-                <PartnerCards />
+              <div className="bg-[#f9f9f9]">
+                <div className="max-w-[1360px] mx-auto px-4 py-16">
+                  <LogoCloud />
+                </div>
               </div>
-            </div>
 
-            <div className="bg-white">
-              <div className="max-w-[1400px] mx-auto px-4 py-16">
-                <ClientTestimonials />
+              <div className="bg-sky-50">
+                <div className="max-w-[1360px] mx-auto px-4 py-16">
+                  <FeatureGrid />
+                </div>
               </div>
-            </div>
 
-            <div className="bg-white">
-              <div className="max-w-[1400px] mx-auto px-4 py-16">
-                <BlogCards />
+              <div
+                className="bg-white z-10"
+                style={{
+                  backgroundImage: "url('/icons/Homepagebg.png')",
+                  backgroundRepeat: "no-repeat",
+                  backgroundSize: "cover",
+                  backgroundPosition: "center",
+                }}
+              >
+                <div className="max-w-[1360px] mx-auto px-4 py-16">
+                  <OfferingCards />
+                </div>
               </div>
-            </div>
 
-            <div
-              className="bg-[#2b3c66] bg-cover bg-no-repeat bg-center"
-              style={{ backgroundImage: "url('/icons/section-bg.webp')" }}
-            >
-              <div className="max-w-[1400px] mx-auto px-4 py-16">
-                <ContactBanner />
+              <div className="bg-[#f1fafe]">
+                <div className="max-w-[1360px] mx-auto px-4 py-16">
+                  <ConsultGrid />
+                </div>
               </div>
-            </div>
 
-            <div className="bg-[#ffffff] border-t border-gray-200">
-              <div className="max-w-[1400px] mx-auto px-4 py-16">
-                <Footer />
+              <div className="bg-white">
+                <div>
+                  <div className="max-w-[1360px] mx-auto px-4 py-16">
+                    <StatsGrid />
+                  </div>
+                </div>
               </div>
-            </div>
 
-            <div className="bg-[#f9fafb] border-t border-gray-200">
-              <div className="max-w-[1400px] mx-auto px-4 py-16">
-                <FooterBottom />
+              <div className="bg-white">
+                <div className="max-w-[1360px] mx-auto px-4 py-16">
+                  <PartnerCards />
+                </div>
+              </div>
+
+              <div className="bg-white">
+                <div className="max-w-[1360px] mx-auto px-4 py-16">
+                  <ClientTestimonials />
+                </div>
+              </div>
+
+              <div className="bg-white">
+                <div className="max-w-[1360px] mx-auto px-4 py-16">
+                  <BlogCards />
+                </div>
+              </div>
+
+              <div
+                className="bg-[#2B3C66] bg-cover bg-no-repeat bg-center "
+                style={{ backgroundImage: "url('/icons/section-bg.webp')" }}
+              >
+                <div className="flex w-full h-[190px] justify-center items-center p-[40px]">
+                  <ContactBanner />
+                </div>
+              </div>
+
+              <div
+                className="bg-[#f1fafe] bg-cover bg-no-repeat bg-center"
+                // style={{ backgroundImage: "url('/icons/section-bg.webp')" }}
+              >
+                <div className="max-w-[1360px] mx-auto bg-[#f1fafe] ">
+                  <AchievementsRow />
+                </div>
+              </div>
+
+              <div className="bg-[#ffffff] border-t border-gray-200">
+                <div className="max-w-[1360px] mx-auto px-1 py-1">
+                  <Footer />
+                </div>
+              </div>
+
+              <div className="bg-[#f9fafb] border-t border-gray-200">
+                <div className="max-w-[1360px] mx-auto px-2 py-4">
+                  <FooterBottom />
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }
